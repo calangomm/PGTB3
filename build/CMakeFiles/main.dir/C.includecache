@@ -6,10 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/isel/Desktop/WM_TB3/src/game_logic/game_logic.c
+../include/common.h
+/home/isel/Desktop/WM_TB3/src/include/common.h
+stdlib.h
+-
+
 /home/isel/Desktop/WM_TB3/src/game_logic/game_logic.h
 ../include/common.h
 /home/isel/Desktop/WM_TB3/src/include/common.h
 stdbool.h
+-
+time.h
 -
 
 /home/isel/Desktop/WM_TB3/src/include/common.h
@@ -29,6 +37,12 @@ time.h
 -
 string.h
 -
+time.h
+-
+
+/home/isel/Desktop/WM_TB3/src/main.c
+include/common.h
+/home/isel/Desktop/WM_TB3/src/include/common.h
 
 /home/isel/Desktop/WM_TB3/src/ui/ui.h
 

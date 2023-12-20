@@ -22,14 +22,23 @@ int main() {
         switch (comando) {
             case '1':
                 atualizar_descarte(&meu_jogo);
+
+                // Inicia o temporizador no primeiro comando '1'
+                if (meu_jogo.start_time == 0) {
+                    meu_jogo.start_time = time(NULL);
+                    meu_jogo.first_command_time = meu_jogo.start_time;
+                }
+
+                meu_jogo.jogadas++;
                 break;
 
             case '2':
                 if (!mover_para_fundacao(&meu_jogo)) {
                     printf("Não foi possível mover para a fundação.\n");
+                 } else {
+                    meu_jogo.jogadas++;  // Incrementa a contagem de jogadas
                 }
                 break;
-
             case '0':
                 printf("Saindo do jogo.\n");
                 break;
@@ -40,9 +49,20 @@ int main() {
 
         limpar_buffer();  // Limpar o buffer de entrada
         limpar_terminal(); //limpa terminal
+        if(checagem_fim_de_jogo(&meu_jogo)){
+            break;
+        }
         
 
     } while (comando != '0');
 
+    // Calcula o tempo decorrido após o primeiro comando '1'
+    if (meu_jogo.start_time != 0) {
+        time_t end_time = time(NULL);
+        double tempo_decorrido = difftime(end_time, meu_jogo.first_command_time);
+
+        printf("Tempo decorrido: %.2lf segundos\n", tempo_decorrido);
+        printf("Número de jogadas: %d\n", meu_jogo.jogadas);
+    }
     return 0;
 }

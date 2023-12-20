@@ -4,6 +4,7 @@
 
 #include "../include/common.h"
 #include <stdbool.h>
+#include <time.h>
 
 #define NUM_NAIPES 4    //"♣", "♦", "♥", "♠"
 #define NUM_NUMEROS 13  // A, 1, 2, 3, 4, 5, 6, 7, 8, 9, T, J, Q, K
@@ -29,6 +30,9 @@ typedef struct {
     Deck baralho;
     Deck descarte;
     Deck fundacao[4];
+    time_t start_time;  
+    time_t first_command_time;  //esta linha para armazenar o tempo do primeiro comando '1'
+    int jogadas;              
 } Jogo;
 
 void inicializar_carta(Carta *carta, int virada, int naipe, int numero);
@@ -44,6 +48,7 @@ void inicializar_deck(Deck *deck);
 void randomizar_deck(Deck *deck);
 
 void inicializar_jogo(Jogo *jogo);
+int checagem_fim_de_jogo(Jogo *jogo);
 
 
 #endif  // GAME_LOGIC_H
