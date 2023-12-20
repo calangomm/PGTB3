@@ -41,6 +41,11 @@ void inicializar_jogo(Jogo *jogo) {
     for (int i = 0; i < 4; ++i) {
         jogo->fundacao[i].indice = 0;
     }
+
+    jogo->start_time = 0;  // Inicializa o temporizador
+    jogo->first_command_time = 0;  // Inicializa o tempo do primeiro comando '1'
+    jogo->jogadas = 0;  // Inicializa a contagem de jogadas
+
 }
 
 void retirar_carta(Deck *origem, Deck *destino, int v) {
@@ -152,4 +157,20 @@ int mover_para_fundacao(Jogo *jogo) {
         printf("O descarte está vazio. Não é possível mover carta para a fundação.\n");
         return 0; // Retornar 0 indicando falha
     }
+}
+
+
+int checagem_fim_de_jogo(Jogo *jogo)
+{
+    Carta fund0 = jogo->fundacao[0].cartas[jogo->fundacao[0].indice - 1];
+    Carta fund1 = jogo->fundacao[1].cartas[jogo->fundacao[1].indice - 1];
+    Carta fund2 = jogo->fundacao[2].cartas[jogo->fundacao[2].indice - 1];
+    Carta fund3 = jogo->fundacao[3].cartas[jogo->fundacao[3].indice - 1];
+
+    if(fund0.numero == 13 && fund1.numero == 13 && fund2.numero == 13 && fund3.numero == 13){
+        //jogo acabou
+        return 1;
+    }
+    //jogo não acabou
+    return 0;
 }
