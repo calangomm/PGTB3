@@ -45,7 +45,6 @@ void inicializar_jogo(Jogo *jogo) {
     jogo->start_time = 0;  // Inicializa o temporizador
     jogo->first_command_time = 0;  // Inicializa o tempo do primeiro comando '1'
     jogo->jogadas = 0;  // Inicializa a contagem de jogadas
-    jogo->pontuacao = 0;
 
 }
 
@@ -135,7 +134,6 @@ int mover_para_fundacao(Jogo *jogo) {
                     // Mover a carta para a fundação
                     retirar_carta(&jogo->descarte, &jogo->fundacao[i], 0);
                     printf("Uma carta foi movida do descarte para a fundação %d.\n", i + 1);
-                    jogo->pontuacao++;
                     return 1; // Retornar 1 indicando sucesso
                 }
             }
@@ -148,7 +146,6 @@ int mover_para_fundacao(Jogo *jogo) {
                     // Mover a carta para a fundação
                     retirar_carta(&jogo->descarte, &jogo->fundacao[i], 0);
                     printf("Uma carta foi movida do descarte para a fundação %d.\n", i + 1);
-                    jogo->pontuacao++;
                     return 1; // Retornar 1 indicando sucesso
                 }
             }
