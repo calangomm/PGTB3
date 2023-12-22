@@ -16,6 +16,11 @@ int main() {
         printf("2 - Mover para Fundação\n");
         printf("0 - Sair\n");
 
+        printf("\n\n");
+
+        printf("Número de jogadas: %d\n", meu_jogo.jogadas);
+        printf("Pontuação: %d\n", meu_jogo.pontuacao);
+
         printf("Comando: ");
         scanf(" %c", &comando);
 
@@ -63,6 +68,7 @@ int main() {
 
         printf("Tempo decorrido: %.2lf segundos\n", tempo_decorrido);
         printf("Número de jogadas: %d\n", meu_jogo.jogadas);
+        printf("Pontuação: %d\n", meu_jogo.pontuacao);
     }
     return 0;
 }

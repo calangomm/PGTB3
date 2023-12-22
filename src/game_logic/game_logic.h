@@ -32,7 +32,8 @@ typedef struct {
     Deck fundacao[4];
     time_t start_time;  
     time_t first_command_time;  //esta linha para armazenar o tempo do primeiro comando '1'
-    int jogadas;              
+    int jogadas;
+    int pontuacao;              
 } Jogo;
 
 void inicializar_carta(Carta *carta, int virada, int naipe, int numero);
