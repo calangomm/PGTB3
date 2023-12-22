@@ -40,7 +40,17 @@ string.h
 time.h
 -
 
+/home/isel/Desktop/WM_TB3/src/main.c
+include/common.h
+/home/isel/Desktop/WM_TB3/src/include/common.h
+
 /home/isel/Desktop/WM_TB3/src/ui/ui.h
+
+/home/isel/Desktop/WM_TB3/src/utils/utils.c
+utils.h
+/home/isel/Desktop/WM_TB3/src/utils/utils.h
+../include/common.h
+/home/isel/Desktop/WM_TB3/src/include/common.h
 
 /home/isel/Desktop/WM_TB3/src/utils/utils.h
 ../include/common.h
