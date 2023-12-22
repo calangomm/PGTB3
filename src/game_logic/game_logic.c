@@ -45,6 +45,8 @@ void inicializar_jogo(Jogo *jogo) {
     jogo->start_time = 0;  // Inicializa o temporizador
     jogo->first_command_time = 0;  // Inicializa o tempo do primeiro comando '1'
     jogo->jogadas = 0;  // Inicializa a contagem de jogadas
+    jogo->pontos = 0;
+    jogo->contador_time = 0;
 
 }
 
@@ -174,3 +176,45 @@ int checagem_fim_de_jogo(Jogo *jogo)
     //jogo não acabou
     return 0;
 }
+
+int check_keyboard(SDL_Event *event, char *comando, Jogo *jogo) {
+    if (event->type == SDL_QUIT) {
+        *comando = 0;
+        return 1;  // Indica que uma tecla foi processada
+    } else if (event->type == SDL_KEYDOWN) {
+        switch (event->key.keysym.sym) {
+            case SDLK_ESCAPE:
+                *comando = 0;
+                return 1;  // Indica que uma tecla foi processada
+            case SDLK_1:
+                printf("Tecla 1 pressionada\n");
+                // Adicione sua lógica aqui
+                return 1;  // Indica que uma tecla foi processada
+            case SDLK_2:
+                printf("Tecla 2 pressionada\n");
+                // Adicione sua lógica aqui
+                return 1;  // Indica que uma tecla foi processada
+        }
+    } else if (event->type == SDL_MOUSEBUTTONDOWN && event->button.button == SDL_BUTTON_LEFT) {
+        // Verifica se é o botão esquerdo do mouse
+        if (jogo->first_command_time == 0) {
+            // Inicia o timer GameStartTime quando o botão esquerdo é pressionado pela primeira vez
+            jogo->first_command_time = SDL_GetTicks();
+            printf("Botão esquerdo do mouse pressionado. Iniciando o timer.\n");
+        }
+        return 1;  // Indica que uma tecla foi processada
+    }
+
+
+    return 0;  // Nenhuma tecla foi processada
+}
+
+void game_run(Jogo *jogo, char *comando) {
+    SDL_Event event;
+    while (SDL_PollEvent(&event) != 0) {
+        if (check_keyboard(&event, comando, jogo)) {
+            printf("Tecla pressionada dentro de game_run\n");
+        }
+    }
+}
+        

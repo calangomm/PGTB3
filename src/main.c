@@ -1,68 +1,56 @@
 #include "include/common.h"
 
 int main() {
-    printf("\n\nImprimindo Jogo:\n\n");
+    // Inicializa o SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        printf("Erro ao inicializar o SDL: %s\n", SDL_GetError());
+        return 0;
+    }
+
+    SDL_Window* window = SDL_CreateWindow("Solitaire Weverto_Jair", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+    if (window == NULL) {
+        printf("Erro ao criar a janela: %s\n", SDL_GetError());
+        SDL_Quit();
+        return 0;
+    }
+
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    if (renderer == NULL) {
+        printf("Erro ao criar o renderizador: %s\n", SDL_GetError());
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        return 0;
+    }
+    if (TTF_Init() != 0) {
+    fprintf(stderr, "Erro ao inicializar SDL_ttf: %s\n", TTF_GetError());
+    // Tratar o erro conforme necessário
+    }
+
     Jogo meu_jogo;
     inicializar_jogo(&meu_jogo);
 
-    char comando;
+    char comando = '1';
 
     do {
-        printf("\n\nImprimindo Jogo:\n\n");
-        imprimir_jogo(&meu_jogo);
+        // Limpa o renderizador
+        SDL_RenderClear(renderer);
 
-        printf("\nEscolha uma opção:\n");
-        printf("1 - Atualizar Descarte\n");
-        printf("2 - Mover para Fundação\n");
-        printf("0 - Sair\n");
+        meu_jogo.start_time = SDL_GetTicks();
 
-        printf("Comando: ");
-        scanf(" %c", &comando);
+        game_run(&meu_jogo, &comando);
+        renderizar_game(&meu_jogo, renderer);
 
-        switch (comando) {
-            case '1':
-                atualizar_descarte(&meu_jogo);
-
-                // Inicia o temporizador no primeiro comando '1'
-                if (meu_jogo.start_time == 0) {
-                    meu_jogo.start_time = time(NULL);
-                    meu_jogo.first_command_time = meu_jogo.start_time;
-                }
-
-                meu_jogo.jogadas++;
-                break;
-
-            case '2':
-                if (!mover_para_fundacao(&meu_jogo)) {
-                    printf("Não foi possível mover para a fundação.\n");
-                 } else {
-                    meu_jogo.jogadas++;  // Incrementa a contagem de jogadas
-                }
-                break;
-            case '0':
-                printf("Saindo do jogo.\n");
-                break;
-
-            default:
-                printf("Comando inválido. Tente novamente.\n");
-        }
-
-        limpar_buffer();  // Limpar o buffer de entrada
-        limpar_terminal(); //limpa terminal
-        if(checagem_fim_de_jogo(&meu_jogo)){
-            break;
-        }
+        // Atualiza a janela
+        SDL_RenderPresent(renderer);
         
 
-    } while (comando != '0');
+    } while (comando != 0);
 
-    // Calcula o tempo decorrido após o primeiro comando '1'
-    if (meu_jogo.start_time != 0) {
-        time_t end_time = time(NULL);
-        double tempo_decorrido = difftime(end_time, meu_jogo.first_command_time);
+    // Libera recursos e finaliza o SDL
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    TTF_Quit();
 
-        printf("Tempo decorrido: %.2lf segundos\n", tempo_decorrido);
-        printf("Número de jogadas: %d\n", meu_jogo.jogadas);
-    }
     return 0;
 }

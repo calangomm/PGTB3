@@ -69,33 +69,74 @@ void imprimir_deck(Deck *deck) {
     printf("\n");
 }
 
-void imprimir_jogo(Jogo *jogo) {
-    printf("Baralho:\n");
-    if (jogo->baralho.indice > 0) {
-        imprimir_carta(jogo->baralho.cartas[jogo->baralho.indice-1], 0);
-    } else {
-        printf("!!\n");
-    }
+void convert_cards_string(Carta c, char *result)
+{
+    const char *naipes[] = {"\u2663", "\u2666", "\u2665", "\u2660"}; //{'♣', '♦', '♥', '♠'}
+    char numero_str[3];
+    sprintf(numero_str, "%1d", c.numero);
 
-    printf("\nDescarte:\n");
-    if (jogo->descarte.indice > 0) {
-        imprimir_carta(jogo->descarte.cartas[jogo->descarte.indice-1], 0);
-    } else {
-        printf("!!\n");
-    }
-
-    printf("\nFundação:\n");
-    for (int i = 0; i < 4; ++i) {
-        printf("Fundação %d: ", i + 1);
-        if (jogo->fundacao[i].indice > 0) {
-            imprimir_carta(jogo->fundacao[i].cartas[jogo->fundacao[i].indice - 1], 0);
+    // Códigos de cores ANSI
+    const char *cor_vermelha = "\x1b[31m";
+    const char *cor_reset = "\x1b[0m";
+    
+    if (!c.virada) {
+        const char *cor_naipe = (c.naipe == 1 || c.naipe == 3) ? cor_vermelha : cor_reset;
+        strcpy(result, cor_naipe);
+        if (c.numero == 1) {
+            strcat(result, "A");
+            strcat(result,naipes[c.naipe - 1]);
+            strcat(result, cor_reset);
+        } else if (c.numero == 11) {
+            strcat(result, "J");
+            strcat(result,naipes[c.naipe - 1]);
+            strcat(result, cor_reset);
+        } else if (c.numero == 12) {
+            strcat(result, "Q");
+            strcat(result,naipes[c.naipe - 1]);
+            strcat(result, cor_reset);
+        } else if (c.numero == 13) {
+            strcat(result, "K");
+            strcat(result,naipes[c.naipe - 1]);
+            strcat(result, cor_reset);
         } else {
-            printf("N/A");
+            strcat(result, numero_str);
+            strcat(result,naipes[c.naipe - 1]);
+            strcat(result, cor_reset);
         }
-        printf("\n");
+    } else {
+        printf("!!");
+    }
+}
+
+void imprimir_jogo(Jogo *jogo) {
+    printf("%-25s %-25s %-25s %-25s %-25s %-25s\n", "Baralho", "Descarte", "Fundação1", "Fundação2", "Fundação3", "Fundação4");
+
+    char baralho[MAX_STRING_CARD] = "";
+    char descarte[MAX_STRING_CARD] = "";
+    char fundac[4][MAX_STRING_CARD];
+
+    if (jogo->baralho.indice > 0) {
+        strncpy(baralho, "??", sizeof(baralho));
+    } else {
+        strncpy(baralho, "!!", sizeof(baralho));
     }
 
-    printf("\n\n");
+    if (jogo->descarte.indice > 0) {
+        convert_cards_string(jogo->descarte.cartas[jogo->descarte.indice-1],descarte);
+    } else {
+        strncpy(descarte, "!!", sizeof(descarte));
+    }
+
+    for (int i = 0; i < 4; ++i) {
+        if (jogo->fundacao[i].indice > 0) {
+            convert_cards_string(jogo->fundacao[i].cartas[jogo->fundacao[i].indice - 1],fundac[i]);
+        } else {
+            strncpy(fundac[i], "!!", sizeof(fundac[i]));
+        }
+    }
+
+    printf("%-25s %-25s %-25s %-25s %-25s %-25s\n", baralho, descarte, fundac[0], fundac[1], fundac[2], fundac[3]);
+
 }
 
 

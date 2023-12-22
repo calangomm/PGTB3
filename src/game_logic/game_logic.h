@@ -32,7 +32,9 @@ typedef struct {
     Deck fundacao[4];
     time_t start_time;  
     time_t first_command_time;  //esta linha para armazenar o tempo do primeiro comando '1'
-    int jogadas;              
+    Uint32 contador_time;
+    int jogadas;
+    int pontos;               
 } Jogo;
 
 void inicializar_carta(Carta *carta, int virada, int naipe, int numero);
@@ -49,6 +51,10 @@ void randomizar_deck(Deck *deck);
 
 void inicializar_jogo(Jogo *jogo);
 int checagem_fim_de_jogo(Jogo *jogo);
+
+
+int check_keyboard(SDL_Event *event, char *comando, Jogo *jogo);
+void game_run(Jogo *jogo, char *comando);
 
 
 #endif  // GAME_LOGIC_H

@@ -177,6 +177,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/ui/ui.o: src/ui/ui.c.o
+
+.PHONY : src/ui/ui.o
+
+# target to build an object file
+src/ui/ui.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ui/ui.c.o
+.PHONY : src/ui/ui.c.o
+
+src/ui/ui.i: src/ui/ui.c.i
+
+.PHONY : src/ui/ui.i
+
+# target to preprocess a source file
+src/ui/ui.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ui/ui.c.i
+.PHONY : src/ui/ui.c.i
+
+src/ui/ui.s: src/ui/ui.c.s
+
+.PHONY : src/ui/ui.s
+
+# target to generate assembly for a file
+src/ui/ui.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ui/ui.c.s
+.PHONY : src/ui/ui.c.s
+
 src/utils/utils.o: src/utils/utils.c.o
 
 .PHONY : src/utils/utils.o
@@ -219,6 +246,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/ui/ui.o"
+	@echo "... src/ui/ui.i"
+	@echo "... src/ui/ui.s"
 	@echo "... src/utils/utils.o"
 	@echo "... src/utils/utils.i"
 	@echo "... src/utils/utils.s"

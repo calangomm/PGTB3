@@ -246,6 +246,15 @@ Project_BINARY_DIR:STATIC=/home/isel/Desktop/WM_TB3/build
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/home/isel/Desktop/WM_TB3
 
+//The directory containing a CMake configuration file for SDL2.
+SDL2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL2
+
+//Path to a file.
+SDL_TTF_INCLUDE_DIR:PATH=/usr/include/SDL
+
+//Path to a library.
+SDL_TTF_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libSDL_ttf.so
+
 
 ########################
 # INTERNAL cache entries
@@ -394,4 +403,10 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding SDL_ttf
+FIND_PACKAGE_MESSAGE_DETAILS_SDL_ttf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL_ttf.so][/usr/include/SDL][v2.0.11()]
+//ADVANCED property for variable: SDL_TTF_INCLUDE_DIR
+SDL_TTF_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SDL_TTF_LIBRARY
+SDL_TTF_LIBRARY-ADVANCED:INTERNAL=1
 

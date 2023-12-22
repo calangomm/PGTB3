@@ -15,6 +15,9 @@
 #include <time.h>
 #include <string.h>
 #include <time.h>
+#include <printf.h>
+#include <GL/gl.h>
+#include <GL/glut.h>
 
 
 #endif
