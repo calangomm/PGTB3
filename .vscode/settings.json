@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "time.h": "c",
+        "sdl_ttf.h": "c",
+        "sdl.h": "c",
+        "begin_code.h": "c",
+        "pglib.h": "c",
+        "graphics.h": "c",
+        "sdl_image.h": "c",
+        "sdl2_gfxprimitives.h": "c",
+        "socket_events.h": "c",
+        "audio.h": "c",
+        "components.h": "c",
+        "events.h": "c",
+        "list.h": "c",
+        "uv.h": "c"
+    }
+}

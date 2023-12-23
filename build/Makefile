@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/isel/Desktop/WM_TB3
+CMAKE_SOURCE_DIR = /home/isel/GIT/PGTB3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/isel/Desktop/WM_TB3/build
+CMAKE_BINARY_DIR = /home/isel/GIT/PGTB3/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/isel/Desktop/WM_TB3/build/CMakeFiles /home/isel/Desktop/WM_TB3/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/isel/GIT/PGTB3/build/CMakeFiles /home/isel/GIT/PGTB3/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/isel/Desktop/WM_TB3/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/isel/GIT/PGTB3/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named game
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+game: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 game
+.PHONY : game
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+game/fast:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
+.PHONY : game/fast
 
 src/game_logic/game_logic.o: src/game_logic/game_logic.c.o
 
@@ -129,7 +129,7 @@ src/game_logic/game_logic.o: src/game_logic/game_logic.c.o
 
 # target to build an object file
 src/game_logic/game_logic.c.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game_logic/game_logic.c.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game_logic/game_logic.c.o
 .PHONY : src/game_logic/game_logic.c.o
 
 src/game_logic/game_logic.i: src/game_logic/game_logic.c.i
@@ -138,7 +138,7 @@ src/game_logic/game_logic.i: src/game_logic/game_logic.c.i
 
 # target to preprocess a source file
 src/game_logic/game_logic.c.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game_logic/game_logic.c.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game_logic/game_logic.c.i
 .PHONY : src/game_logic/game_logic.c.i
 
 src/game_logic/game_logic.s: src/game_logic/game_logic.c.s
@@ -147,7 +147,7 @@ src/game_logic/game_logic.s: src/game_logic/game_logic.c.s
 
 # target to generate assembly for a file
 src/game_logic/game_logic.c.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game_logic/game_logic.c.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game_logic/game_logic.c.s
 .PHONY : src/game_logic/game_logic.c.s
 
 src/main.o: src/main.c.o
@@ -156,7 +156,7 @@ src/main.o: src/main.c.o
 
 # target to build an object file
 src/main.c.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.c.o
 .PHONY : src/main.c.o
 
 src/main.i: src/main.c.i
@@ -165,7 +165,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.c.i
 .PHONY : src/main.c.i
 
 src/main.s: src/main.c.s
@@ -174,7 +174,7 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.c.s
 .PHONY : src/main.c.s
 
 src/utils/utils.o: src/utils/utils.c.o
@@ -183,7 +183,7 @@ src/utils/utils.o: src/utils/utils.c.o
 
 # target to build an object file
 src/utils/utils.c.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/utils/utils.c.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/utils/utils.c.o
 .PHONY : src/utils/utils.c.o
 
 src/utils/utils.i: src/utils/utils.c.i
@@ -192,7 +192,7 @@ src/utils/utils.i: src/utils/utils.c.i
 
 # target to preprocess a source file
 src/utils/utils.c.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/utils/utils.c.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/utils/utils.c.i
 .PHONY : src/utils/utils.c.i
 
 src/utils/utils.s: src/utils/utils.c.s
@@ -201,7 +201,7 @@ src/utils/utils.s: src/utils/utils.c.s
 
 # target to generate assembly for a file
 src/utils/utils.c.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/utils/utils.c.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/utils/utils.c.s
 .PHONY : src/utils/utils.c.s
 
 # Help Target
@@ -212,7 +212,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... main"
+	@echo "... game"
 	@echo "... src/game_logic/game_logic.o"
 	@echo "... src/game_logic/game_logic.i"
 	@echo "... src/game_logic/game_logic.s"

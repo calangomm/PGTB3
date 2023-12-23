@@ -15,6 +15,10 @@
 #include <time.h>
 #include <string.h>
 #include <time.h>
+#include <SDL2/SDL.h>
+#include <SDL_ttf.h>
+#include <errno.h>
+#include "pg/pglib.h"
 
 
 #endif

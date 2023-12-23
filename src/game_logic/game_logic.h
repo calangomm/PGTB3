@@ -16,6 +16,8 @@ typedef struct {
     int virada;  // 0 ou 1
     int naipe;   // 1 a 4
     int numero;  // 1 a 13
+    int x;      //posições das cartas
+    int y;
 } Carta;
 
 //baralho de cartas do jogo (deck)
@@ -30,10 +32,19 @@ typedef struct {
     Deck baralho;
     Deck descarte;
     Deck fundacao[4];
-    time_t start_time;  
-    time_t first_command_time;  //esta linha para armazenar o tempo do primeiro comando '1'
-    int jogadas;              
+    int last_frame_time;
+    int game_Started;
+    int elapsed_time;
+    int time_sec;
+    int time_min;
+    int jogadas;
+    int pontos;
 } Jogo;
+
+struct mouse_last_cord{
+    int x;
+    int y;
+} mouse_last_cord;
 
 void inicializar_carta(Carta *carta, int virada, int naipe, int numero);
 void retirar_carta(Deck *origem, Deck *destino, int virada);
@@ -49,6 +60,8 @@ void randomizar_deck(Deck *deck);
 
 void inicializar_jogo(Jogo *jogo);
 int checagem_fim_de_jogo(Jogo *jogo);
+
+void display_elapsed_time(Jogo *jogo);
 
 
 #endif  // GAME_LOGIC_H

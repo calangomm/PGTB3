@@ -37,15 +37,16 @@ void inicializar_jogo(Jogo *jogo) {
     randomizar_deck(&jogo->baralho);
 
     jogo->descarte.indice = 0;
+    jogo->last_frame_time = 0;
+    jogo->game_Started = 0;
+    jogo->time_sec = 0;
+    jogo->time_min = 0;
+    jogo->jogadas = 0;
+    jogo->pontos = 0;
 
     for (int i = 0; i < 4; ++i) {
         jogo->fundacao[i].indice = 0;
     }
-
-    jogo->start_time = 0;  // Inicializa o temporizador
-    jogo->first_command_time = 0;  // Inicializa o tempo do primeiro comando '1'
-    jogo->jogadas = 0;  // Inicializa a contagem de jogadas
-
 }
 
 void retirar_carta(Deck *origem, Deck *destino, int v) {
@@ -173,4 +174,27 @@ int checagem_fim_de_jogo(Jogo *jogo)
     }
     //jogo não acabou
     return 0;
+}
+
+void display_elapsed_time(Jogo *jogo) {
+    // Obtém o tempo atual em milissegundos
+    jogo->last_frame_time = SDL_GetTicks();
+
+    if(jogo->game_Started != 0){
+        // Calcula o tempo decorrido desde o início do jogo em segundos
+        jogo->elapsed_time = (jogo->last_frame_time - jogo->game_Started) / 1000;
+
+        // Calcula minutos e segundos
+        jogo->time_min = jogo->elapsed_time / 60;
+        jogo->time_sec = jogo->elapsed_time % 60;
+    }
+    else{
+        jogo->time_min = 0;
+        jogo->time_sec = 0;
+    }
+
+    
+
+    // Mostra o tempo decorrido
+    printf("Tempo decorrido: %d minutos e %d segundos\n", jogo->time_min, jogo->time_sec);
 }
