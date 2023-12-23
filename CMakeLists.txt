@@ -24,6 +24,3 @@ target_link_libraries(game ${SDL2_LIBRARIES} ${SDL_TTF_LIBRARIES} -L/caminho/par
 
 # Copie o diretório de assets para o diretório de build
 file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
-
-# Copie a fonte para o diretório de build
-file(COPY ${CMAKE_SOURCE_DIR}/assets/font/Freshman.ttf DESTINATION ${CMAKE_BINARY_DIR})

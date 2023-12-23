@@ -40,6 +40,7 @@
 
 #define FONT_SIZE 24
 
+#define	c_backgroung 		graph_rgb(41,153,97)
 
 
 struct header{

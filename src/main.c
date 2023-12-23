@@ -5,44 +5,8 @@ SDL_Renderer* renderer = NULL;
 SDL_Window* window = NULL;
 
 int inicializar_window(void){
-    if(SDL_Init(SDL_INIT_EVERYTHING)!=0){
-        fprintf(stderr, "Erro Inicializando SDL.\n");
-        SDL_Quit();
-        return false;
-    }
-
-    // Inicialize o SDL_ttf
-    if (TTF_Init() == -1) {
-        fprintf(stderr, "Erro Inicializando SDL_ttf: %s\n", TTF_GetError());
-        SDL_Quit();
-        return false;
-    }
-
-    SDL_Window* window = SDL_CreateWindow(
-        NULL,
-        SDL_WINDOWPOS_CENTERED,
-        SDL_WINDOWPOS_CENTERED,
-        WINDOW_WIDTH,
-        WINDOW_HEIGHT,
-        0
-    );
-
-    if(!window){
-        fprintf(stderr, "Erro criando Janela SDL.\n");
-        TTF_Quit();
-        SDL_Quit();
-        return false;
-    }
-
-    renderer = SDL_CreateRenderer(window,-1,0);
-
-    if(!renderer){
-        fprintf(stderr, "Erro criando renderizador SDL.\n");
-        return false;
-        SDL_DestroyWindow(window);
-        TTF_Quit();
-        SDL_Quit();
-    }
+    graph_init2("solitario", WINDOW_WIDTH, WINDOW_HEIGHT);
+    graph_start();
     return true;
 }
 
@@ -132,46 +96,30 @@ void update(Jogo *meu_jogo){
 
 
 void render(Jogo *jogo){
-    SDL_SetRenderDrawColor(renderer, 41,153,97,255);
-    SDL_RenderClear(renderer);
+    graph_rect(0,
+                0,
+                WINDOW_WIDTH,
+                WINDOW_HEIGHT,
+                c_backgroung,
+                true);
 
-    //objetos a serem renderizados
-    //Desenha o fundo do header
-    SDL_Rect header_rect = {header.x,
-                            header.y,
-                            header.width,
-                            header.height};
-    
-    SDL_SetRenderDrawColor(renderer, 64,64,64,255);
-    SDL_RenderFillRect(renderer, &header_rect);
+    graph_round_rect(header.x,
+                    header.y,
+                    header.width,
+                    header.height,
+                    c_backgroung,
+                    true);
 
 
-    //desenha o numero de jogadas
-    // Adicione a renderização do texto "Plays"
-    graph_text(DIST_HEADER_LEFT,
-                DIST_HEADER_TOP,
-                c_white,
-                "Plays",
-                MEDIUM_FONT);
-
-    int baralho_x = graph_baralho.x;
-
-    // Crie um vetor de retângulos
-    SDL_Rect baralho_rects[7];
-
-    for (int i = 0; i < 7; i++) {
-        baralho_rects[i] = (SDL_Rect){baralho_x, graph_baralho.y, graph_baralho.width, graph_baralho.height};
-        baralho_x += CARDS_DIST + CARD_WIDTH;
-    }
-
-    // Fundo das cartas caso vazias
+    /*// Fundo das cartas caso vazias
     for (int i = 0; i < 7; i++) {
         if(i==2)SDL_SetRenderDrawColor(renderer, 41,153,97,255);
         else SDL_SetRenderDrawColor(renderer, 20,120,50,255);
-        SDL_RenderFillRect(renderer, &baralho_rects[i]);
+        SDL_RenderFillRect(renderer, );
     }
 
-    SDL_RenderPresent(renderer);
+    SDL_RenderPresent(renderer);*/
+    graph_refresh();
 
 }
 
