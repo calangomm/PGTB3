@@ -33,8 +33,11 @@ typedef struct {
     time_t start_time;  
     time_t first_command_time;  //esta linha para armazenar o tempo do primeiro comando '1'
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     int jogadas;              
 =======
+=======
+>>>>>>> Stashed changes
     int contador_time;
     int jogadas;
     int pontos;               
@@ -57,6 +60,11 @@ void inicializar_jogo(Jogo *jogo);
 int checagem_fim_de_jogo(Jogo *jogo);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+void game_run(Jogo *jogo);
+
+>>>>>>> Stashed changes
 =======
 void game_run(Jogo *jogo);
 

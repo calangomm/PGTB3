@@ -243,7 +243,10 @@ GLEW_STATIC_LIBRARY_DEBUG:FILEPATH=GLEW_STATIC_LIBRARY_DEBUG-NOTFOUND
 GLEW_STATIC_LIBRARY_RELEASE:FILEPATH=GLEW_STATIC_LIBRARY_RELEASE-NOTFOUND
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 //Value Computed by CMake
 MeuProjetoC_BINARY_DIR:STATIC=/home/isel/GIT/PGTB3/build
 
@@ -403,7 +406,10 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 //Details about finding GLEW
 FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libGLEW.so][v2.1.0()]
 //ADVANCED property for variable: GLEW_INCLUDE_DIR
@@ -416,5 +422,8 @@ GLEW_SHARED_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 GLEW_STATIC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GLEW_STATIC_LIBRARY_RELEASE
 GLEW_STATIC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 

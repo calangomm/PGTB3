@@ -1,6 +1,7 @@
 #include "include/common.h"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 int main() {
     printf("\n\nImprimindo Jogo:\n\n");
     Jogo meu_jogo;
@@ -66,6 +67,12 @@ GLFWwindow* janela;
 
 int main() {
 
+=======
+GLFWwindow* janela;
+
+int main() {
+
+>>>>>>> Stashed changes
      if (inicializar_grafico() != 0) {
         return -1;
     }
@@ -91,6 +98,9 @@ int main() {
 
     // Encerrar o GLFW
     glfwTerminate();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
         printf("Tempo decorrido: %.2lf segundos\n", tempo_decorrido);

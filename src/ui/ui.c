@@ -1,10 +1,17 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 =======
 #include "../include/common.h"
 #include <GLFW/glfw3.h>
 
 
+=======
+#include "../include/common.h"
+#include <GLFW/glfw3.h>
+
+
+>>>>>>> Stashed changes
 GLFWwindow* janela;
 
 int inicializar_grafico() {
@@ -85,4 +92,7 @@ void tecla_pressionada(GLFWwindow* window, int key, int scancode, int action, in
     }
 }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

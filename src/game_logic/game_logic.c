@@ -176,9 +176,15 @@ int checagem_fim_de_jogo(Jogo *jogo)
 }
 =======
 }
+<<<<<<< Updated upstream
 
 
 
+=======
+
+
+
+>>>>>>> Stashed changes
 void game_run(Jogo *jogo) {
     
 }

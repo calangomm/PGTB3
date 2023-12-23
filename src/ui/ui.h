@@ -28,5 +28,9 @@ void tecla_pressionada(GLFWwindow* window, int key, int scancode, int action, in
 void desenhar_retangulo(float x, float y, float largura, float altura, float cor_r, float cor_g, float cor_b);
 void renderizar_header(void);
 
+<<<<<<< Updated upstream
+#endif
+>>>>>>> Stashed changes
+=======
 #endif
 >>>>>>> Stashed changes

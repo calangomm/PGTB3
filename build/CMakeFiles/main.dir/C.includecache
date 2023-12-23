@@ -36,6 +36,7 @@ string.h
 time.h
 -
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 /home/isel/Desktop/WM_TB3/src/main.c
 include/common.h
@@ -59,17 +60,37 @@ unistd.h
 -
 
 /home/isel/GIT/PGTB3/src/ui/ui.c
+=======
+printf.h
+-
+unistd.h
+-
+
+/home/isel/GIT/PGTB3/src/ui/ui.c
 ../include/common.h
 /home/isel/GIT/PGTB3/src/include/common.h
 GLFW/glfw3.h
 -
 
 /home/isel/GIT/PGTB3/src/ui/ui.h
+>>>>>>> Stashed changes
 ../include/common.h
 /home/isel/GIT/PGTB3/src/include/common.h
 GLFW/glfw3.h
 -
 
+<<<<<<< Updated upstream
+/home/isel/GIT/PGTB3/src/ui/ui.h
+../include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
+GLFW/glfw3.h
+-
+
+/home/isel/GIT/PGTB3/src/utils/utils.h
+../include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
+>>>>>>> Stashed changes
+=======
 /home/isel/GIT/PGTB3/src/utils/utils.h
 ../include/common.h
 /home/isel/GIT/PGTB3/src/include/common.h

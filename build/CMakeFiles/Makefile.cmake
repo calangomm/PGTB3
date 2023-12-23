@@ -12,11 +12,17 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   "/usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Config.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3ConfigVersion.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets-none.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Targets.cmake"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"

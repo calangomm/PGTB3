@@ -8,11 +8,14 @@ file(GLOB SOURCES "src/*.c" "src/game_logic/*.c" "src/utils/*.c")
 
 # Adiciona o diretório src à lista de diretórios incluídos
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 include_directories(src)
 
 # Cria o executável main a partir dos arquivos .c
 add_executable(main ${SOURCES})
 =======
+=======
+>>>>>>> Stashed changes
 include_directories(src /usr/local/include/pg)
 
 # Encontrar a biblioteca GLFW
@@ -28,4 +31,7 @@ target_link_libraries(main GL)
 
 # Adicionar os arquivos do GLFW às bibliotecas que devem ser linkadas
 target_link_libraries(main ${GLFW_LIBRARIES})
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

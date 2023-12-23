@@ -27,6 +27,7 @@ The CXX compiler identification is GNU, found in "/home/isel/GIT/PGTB3/build/CMa
 
 Determining if the C compiler works passed with the following output:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Change Dir: /home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_d744c/fast && /usr/bin/make -f CMakeFiles/cmTC_d744c.dir/build.make CMakeFiles/cmTC_d744c.dir/build
@@ -38,6 +39,8 @@ Linking C executable cmTC_d744c
 /usr/bin/cc      CMakeFiles/cmTC_d744c.dir/testCCompiler.c.o  -o cmTC_d744c 
 make[1]: Leaving directory '/home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp'
 =======
+=======
+>>>>>>> Stashed changes
 Change Dir: /home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_eef2f/fast && /usr/bin/make -f CMakeFiles/cmTC_eef2f.dir/build.make CMakeFiles/cmTC_eef2f.dir/build
@@ -48,11 +51,11 @@ Linking C executable cmTC_eef2f
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eef2f.dir/link.txt --verbose=1
 /usr/bin/cc      CMakeFiles/cmTC_eef2f.dir/testCCompiler.c.o  -o cmTC_eef2f 
 make[1]: Leaving directory '/home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp'
->>>>>>> Stashed changes
 
 
 
 Detecting C compiler ABI info compiled with the following output:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Change Dir: /home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp
 
@@ -61,12 +64,17 @@ make[1]: Entering directory '/home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp
 Building C object CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o
 /usr/bin/cc   -v -o CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
 =======
+=======
+>>>>>>> Stashed changes
 Change Dir: /home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_b29ed/fast && /usr/bin/make -f CMakeFiles/cmTC_b29ed.dir/build.make CMakeFiles/cmTC_b29ed.dir/build
 make[1]: Entering directory '/home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o
 /usr/bin/cc   -v -o CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
@@ -77,8 +85,13 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20
 Thread model: posix
 gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccQ4aahC.s
+=======
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccwM02MT.s
+>>>>>>> Stashed changes
 =======
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccwM02MT.s
@@ -103,6 +116,7 @@ GNU C17 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 01da938ff5dc2163489aa33cb3b747a7
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
  as -v --64 -o CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o /tmp/ccQ4aahC.s
 GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
@@ -113,6 +127,8 @@ Linking C executable cmTC_7ae17
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ae17.dir/link.txt --verbose=1
 /usr/bin/cc     -v CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o  -o cmTC_7ae17 
 =======
+=======
+>>>>>>> Stashed changes
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
  as -v --64 -o CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o /tmp/ccwM02MT.s
 GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
@@ -122,6 +138,9 @@ COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o' 
 Linking C executable cmTC_b29ed
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b29ed.dir/link.txt --verbose=1
 /usr/bin/cc     -v CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o  -o cmTC_b29ed 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
@@ -135,16 +154,18 @@ gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2)
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ae17' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4f6Um5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7ae17 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ae17' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp'
 =======
+=======
+>>>>>>> Stashed changes
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b29ed' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjGAfCm.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b29ed /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b29ed' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp'
->>>>>>> Stashed changes
 
 
 
@@ -168,15 +189,21 @@ Parsed C implicit link information from above output:
   ignore line: [Change Dir: /home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp]
   ignore line: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ignore line: [Run Build Command(s):/usr/bin/make cmTC_7ae17/fast && /usr/bin/make -f CMakeFiles/cmTC_7ae17.dir/build.make CMakeFiles/cmTC_7ae17.dir/build]
   ignore line: [make[1]: Entering directory '/home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp']
   ignore line: [Building C object CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o]
   ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
 =======
+=======
+>>>>>>> Stashed changes
   ignore line: [Run Build Command(s):/usr/bin/make cmTC_b29ed/fast && /usr/bin/make -f CMakeFiles/cmTC_b29ed.dir/build.make CMakeFiles/cmTC_b29ed.dir/build]
   ignore line: [make[1]: Entering directory '/home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp']
   ignore line: [Building C object CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o]
   ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
@@ -187,8 +214,13 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccQ4aahC.s]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccwM02MT.s]
+>>>>>>> Stashed changes
 =======
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccwM02MT.s]
@@ -213,6 +245,7 @@ Parsed C implicit link information from above output:
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 01da938ff5dc2163489aa33cb3b747a7]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
   ignore line: [ as -v --64 -o CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o /tmp/ccQ4aahC.s]
   ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
@@ -223,6 +256,8 @@ Parsed C implicit link information from above output:
   ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ae17.dir/link.txt --verbose=1]
   ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o  -o cmTC_7ae17 ]
 =======
+=======
+>>>>>>> Stashed changes
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
   ignore line: [ as -v --64 -o CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o /tmp/ccwM02MT.s]
   ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
@@ -232,6 +267,9 @@ Parsed C implicit link information from above output:
   ignore line: [Linking C executable cmTC_b29ed]
   ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b29ed.dir/link.txt --verbose=1]
   ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o  -o cmTC_b29ed ]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
@@ -245,8 +283,13 @@ Parsed C implicit link information from above output:
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ae17' '-mtune=generic' '-march=x86-64']
   link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4f6Um5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7ae17 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b29ed' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjGAfCm.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b29ed /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+>>>>>>> Stashed changes
 =======
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b29ed' '-mtune=generic' '-march=x86-64']
   link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjGAfCm.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b29ed /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
@@ -256,7 +299,11 @@ Parsed C implicit link information from above output:
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     arg [-plugin-opt=-fresolution=/tmp/cc4f6Um5.res] ==> ignore
+=======
+    arg [-plugin-opt=-fresolution=/tmp/ccjGAfCm.res] ==> ignore
+>>>>>>> Stashed changes
 =======
     arg [-plugin-opt=-fresolution=/tmp/ccjGAfCm.res] ==> ignore
 >>>>>>> Stashed changes
@@ -278,7 +325,11 @@ Parsed C implicit link information from above output:
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     arg [cmTC_7ae17] ==> ignore
+=======
+    arg [cmTC_b29ed] ==> ignore
+>>>>>>> Stashed changes
 =======
     arg [cmTC_b29ed] ==> ignore
 >>>>>>> Stashed changes
@@ -294,7 +345,11 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     arg [CMakeFiles/cmTC_7ae17.dir/CMakeCCompilerABI.c.o] ==> ignore
+=======
+    arg [CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o] ==> ignore
+>>>>>>> Stashed changes
 =======
     arg [CMakeFiles/cmTC_b29ed.dir/CMakeCCompilerABI.c.o] ==> ignore
 >>>>>>> Stashed changes
@@ -326,6 +381,7 @@ Parsed C implicit link information from above output:
 
 Determining if the CXX compiler works passed with the following output:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Change Dir: /home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_323d0/fast && /usr/bin/make -f CMakeFiles/cmTC_323d0.dir/build.make CMakeFiles/cmTC_323d0.dir/build
@@ -337,6 +393,8 @@ Linking CXX executable cmTC_323d0
 /usr/bin/c++       CMakeFiles/cmTC_323d0.dir/testCXXCompiler.cxx.o  -o cmTC_323d0 
 make[1]: Leaving directory '/home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp'
 =======
+=======
+>>>>>>> Stashed changes
 Change Dir: /home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_b77a4/fast && /usr/bin/make -f CMakeFiles/cmTC_b77a4.dir/build.make CMakeFiles/cmTC_b77a4.dir/build
@@ -347,11 +405,11 @@ Linking CXX executable cmTC_b77a4
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b77a4.dir/link.txt --verbose=1
 /usr/bin/c++       CMakeFiles/cmTC_b77a4.dir/testCXXCompiler.cxx.o  -o cmTC_b77a4 
 make[1]: Leaving directory '/home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp'
->>>>>>> Stashed changes
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Change Dir: /home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp
 
@@ -360,12 +418,17 @@ make[1]: Entering directory '/home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp
 Building CXX object CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o
 /usr/bin/c++    -v -o CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
 =======
+=======
+>>>>>>> Stashed changes
 Change Dir: /home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_bc1fe/fast && /usr/bin/make -f CMakeFiles/cmTC_bc1fe.dir/build.make CMakeFiles/cmTC_bc1fe.dir/build
 make[1]: Entering directory '/home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp'
 Building CXX object CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o
 /usr/bin/c++    -v -o CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
@@ -376,8 +439,13 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20
 Thread model: posix
 gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccLyyW1A.s
+=======
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccv5mB9Q.s
+>>>>>>> Stashed changes
 =======
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccv5mB9Q.s
@@ -406,6 +474,7 @@ GNU C++14 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 3d1eba838554fa2348dba760e4770469
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
  as -v --64 -o CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccLyyW1A.s
 GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
@@ -416,6 +485,8 @@ Linking CXX executable cmTC_ef213
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef213.dir/link.txt --verbose=1
 /usr/bin/c++      -v CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ef213 
 =======
+=======
+>>>>>>> Stashed changes
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
  as -v --64 -o CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccv5mB9Q.s
 GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
@@ -425,6 +496,9 @@ COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp
 Linking CXX executable cmTC_bc1fe
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc1fe.dir/link.txt --verbose=1
 /usr/bin/c++      -v CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_bc1fe 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
@@ -438,16 +512,18 @@ gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2)
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ef213' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBIH0u4.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ef213 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ef213' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp'
 =======
+=======
+>>>>>>> Stashed changes
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bc1fe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccg5ABEj.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_bc1fe /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bc1fe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp'
->>>>>>> Stashed changes
 
 
 
@@ -477,15 +553,21 @@ Parsed CXX implicit link information from above output:
   ignore line: [Change Dir: /home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp]
   ignore line: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ignore line: [Run Build Command(s):/usr/bin/make cmTC_ef213/fast && /usr/bin/make -f CMakeFiles/cmTC_ef213.dir/build.make CMakeFiles/cmTC_ef213.dir/build]
   ignore line: [make[1]: Entering directory '/home/isel/Desktop/WM_TB3/build/CMakeFiles/CMakeTmp']
   ignore line: [Building CXX object CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o]
   ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
 =======
+=======
+>>>>>>> Stashed changes
   ignore line: [Run Build Command(s):/usr/bin/make cmTC_bc1fe/fast && /usr/bin/make -f CMakeFiles/cmTC_bc1fe.dir/build.make CMakeFiles/cmTC_bc1fe.dir/build]
   ignore line: [make[1]: Entering directory '/home/isel/GIT/PGTB3/build/CMakeFiles/CMakeTmp']
   ignore line: [Building CXX object CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o]
   ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
@@ -496,8 +578,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccLyyW1A.s]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccv5mB9Q.s]
+>>>>>>> Stashed changes
 =======
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccv5mB9Q.s]
@@ -526,6 +613,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 3d1eba838554fa2348dba760e4770469]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
   ignore line: [ as -v --64 -o CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccLyyW1A.s]
   ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
@@ -536,6 +624,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef213.dir/link.txt --verbose=1]
   ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ef213 ]
 =======
+=======
+>>>>>>> Stashed changes
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
   ignore line: [ as -v --64 -o CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccv5mB9Q.s]
   ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
@@ -545,6 +635,9 @@ Parsed CXX implicit link information from above output:
   ignore line: [Linking CXX executable cmTC_bc1fe]
   ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc1fe.dir/link.txt --verbose=1]
   ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_bc1fe ]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
@@ -558,8 +651,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ef213' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
   link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBIH0u4.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ef213 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bc1fe' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccg5ABEj.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_bc1fe /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+>>>>>>> Stashed changes
 =======
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bc1fe' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
   link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccg5ABEj.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_bc1fe /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
@@ -569,7 +667,11 @@ Parsed CXX implicit link information from above output:
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     arg [-plugin-opt=-fresolution=/tmp/ccBIH0u4.res] ==> ignore
+=======
+    arg [-plugin-opt=-fresolution=/tmp/ccg5ABEj.res] ==> ignore
+>>>>>>> Stashed changes
 =======
     arg [-plugin-opt=-fresolution=/tmp/ccg5ABEj.res] ==> ignore
 >>>>>>> Stashed changes
@@ -591,7 +693,11 @@ Parsed CXX implicit link information from above output:
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     arg [cmTC_ef213] ==> ignore
+=======
+    arg [cmTC_bc1fe] ==> ignore
+>>>>>>> Stashed changes
 =======
     arg [cmTC_bc1fe] ==> ignore
 >>>>>>> Stashed changes
@@ -607,7 +713,11 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     arg [CMakeFiles/cmTC_ef213.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+=======
+    arg [CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+>>>>>>> Stashed changes
 =======
     arg [CMakeFiles/cmTC_bc1fe.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
 >>>>>>> Stashed changes

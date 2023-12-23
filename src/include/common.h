@@ -17,7 +17,12 @@
 #include <string.h>
 #include <time.h>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+#include <printf.h>
+#include <unistd.h>
+>>>>>>> Stashed changes
 =======
 #include <printf.h>
 #include <unistd.h>
