@@ -6,27 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/isel/Desktop/WM_TB3/src/game_logic/game_logic.c
+/home/isel/GIT/PGTB3/src/game_logic/game_logic.h
 ../include/common.h
-/home/isel/Desktop/WM_TB3/src/include/common.h
-stdlib.h
--
-
-/home/isel/Desktop/WM_TB3/src/game_logic/game_logic.h
-../include/common.h
-/home/isel/Desktop/WM_TB3/src/include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
 stdbool.h
 -
 time.h
 -
 
-/home/isel/Desktop/WM_TB3/src/include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
 ../game_logic/game_logic.h
-/home/isel/Desktop/WM_TB3/src/game_logic/game_logic.h
+/home/isel/GIT/PGTB3/src/game_logic/game_logic.h
 ../utils/utils.h
-/home/isel/Desktop/WM_TB3/src/utils/utils.h
+/home/isel/GIT/PGTB3/src/utils/utils.h
 ../ui/ui.h
-/home/isel/Desktop/WM_TB3/src/ui/ui.h
+/home/isel/GIT/PGTB3/src/ui/ui.h
+GLFW/glfw3.h
+-
 stdio.h
 -
 stdbool.h
@@ -39,6 +35,7 @@ string.h
 -
 time.h
 -
+<<<<<<< Updated upstream
 
 /home/isel/Desktop/WM_TB3/src/main.c
 include/common.h
@@ -55,4 +52,26 @@ utils.h
 /home/isel/Desktop/WM_TB3/src/utils/utils.h
 ../include/common.h
 /home/isel/Desktop/WM_TB3/src/include/common.h
+=======
+printf.h
+-
+unistd.h
+-
+
+/home/isel/GIT/PGTB3/src/ui/ui.c
+../include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
+GLFW/glfw3.h
+-
+
+/home/isel/GIT/PGTB3/src/ui/ui.h
+../include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
+GLFW/glfw3.h
+-
+
+/home/isel/GIT/PGTB3/src/utils/utils.h
+../include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
+>>>>>>> Stashed changes
 

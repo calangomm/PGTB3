@@ -1,1 +1,5 @@
+<<<<<<< Updated upstream
 /usr/bin/cc    CMakeFiles/main.dir/src/game_logic/game_logic.c.o CMakeFiles/main.dir/src/main.c.o CMakeFiles/main.dir/src/utils/utils.c.o  -o main 
+=======
+/usr/bin/cc    CMakeFiles/main.dir/src/game_logic/game_logic.c.o CMakeFiles/main.dir/src/main.c.o CMakeFiles/main.dir/src/ui/ui.c.o CMakeFiles/main.dir/src/utils/utils.c.o  -o main  /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 -lGL 
+>>>>>>> Stashed changes

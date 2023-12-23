@@ -1,6 +1,5 @@
 // game_logic/game_logic.c
 #include "../include/common.h"
-#include <stdlib.h>
 
 
 void inicializar_carta(Carta *carta, int virada, int naipe, int numero) {
@@ -173,4 +172,15 @@ int checagem_fim_de_jogo(Jogo *jogo)
     }
     //jogo não acabou
     return 0;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+
+
+void game_run(Jogo *jogo) {
+    
+}
+        
+>>>>>>> Stashed changes

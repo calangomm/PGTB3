@@ -12,6 +12,15 @@ CMakeFiles/main.dir/src/main.c.o: ../src/include/common.h
 CMakeFiles/main.dir/src/main.c.o: ../src/main.c
 CMakeFiles/main.dir/src/main.c.o: ../src/ui/ui.h
 CMakeFiles/main.dir/src/main.c.o: ../src/utils/utils.h
+<<<<<<< Updated upstream
+=======
+
+CMakeFiles/main.dir/src/ui/ui.c.o: ../src/game_logic/game_logic.h
+CMakeFiles/main.dir/src/ui/ui.c.o: ../src/include/common.h
+CMakeFiles/main.dir/src/ui/ui.c.o: ../src/ui/ui.c
+CMakeFiles/main.dir/src/ui/ui.c.o: ../src/ui/ui.h
+CMakeFiles/main.dir/src/ui/ui.c.o: ../src/utils/utils.h
+>>>>>>> Stashed changes
 
 CMakeFiles/main.dir/src/utils/utils.c.o: ../src/game_logic/game_logic.h
 CMakeFiles/main.dir/src/utils/utils.c.o: ../src/include/common.h

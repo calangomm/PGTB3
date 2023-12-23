@@ -1,5 +1,6 @@
 #include "include/common.h"
 
+<<<<<<< Updated upstream
 int main() {
     printf("\n\nImprimindo Jogo:\n\n");
     Jogo meu_jogo;
@@ -60,6 +61,37 @@ int main() {
     if (meu_jogo.start_time != 0) {
         time_t end_time = time(NULL);
         double tempo_decorrido = difftime(end_time, meu_jogo.first_command_time);
+=======
+GLFWwindow* janela;
+
+int main() {
+
+     if (inicializar_grafico() != 0) {
+        return -1;
+    }
+
+    // Inicializar o jogo
+    Jogo meu_jogo;
+    inicializar_jogo(&meu_jogo);
+
+    do {
+        // Atualizar lógica do jogo
+        game_run(&meu_jogo);
+
+        // Renderizar cena
+        renderizar_game();
+
+        // Processar eventos e trocar os buffers
+        glfwPollEvents();
+
+        // Adicionar um pequeno delay para controlar a taxa de atualização
+        glfwSwapInterval(1);
+
+    } while (!glfwWindowShouldClose(janela));
+
+    // Encerrar o GLFW
+    glfwTerminate();
+>>>>>>> Stashed changes
 
         printf("Tempo decorrido: %.2lf segundos\n", tempo_decorrido);
         printf("Número de jogadas: %d\n", meu_jogo.jogadas);

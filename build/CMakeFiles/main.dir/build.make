@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/isel/Desktop/WM_TB3
+CMAKE_SOURCE_DIR = /home/isel/GIT/PGTB3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/isel/Desktop/WM_TB3/build
+CMAKE_BINARY_DIR = /home/isel/GIT/PGTB3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -59,42 +59,47 @@ include CMakeFiles/main.dir/flags.make
 
 CMakeFiles/main.dir/src/game_logic/game_logic.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/game_logic/game_logic.c.o: ../src/game_logic/game_logic.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isel/Desktop/WM_TB3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/src/game_logic/game_logic.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/game_logic/game_logic.c.o   -c /home/isel/Desktop/WM_TB3/src/game_logic/game_logic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isel/GIT/PGTB3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/src/game_logic/game_logic.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/game_logic/game_logic.c.o   -c /home/isel/GIT/PGTB3/src/game_logic/game_logic.c
 
 CMakeFiles/main.dir/src/game_logic/game_logic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/game_logic/game_logic.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/isel/Desktop/WM_TB3/src/game_logic/game_logic.c > CMakeFiles/main.dir/src/game_logic/game_logic.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/isel/GIT/PGTB3/src/game_logic/game_logic.c > CMakeFiles/main.dir/src/game_logic/game_logic.c.i
 
 CMakeFiles/main.dir/src/game_logic/game_logic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/game_logic/game_logic.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/isel/Desktop/WM_TB3/src/game_logic/game_logic.c -o CMakeFiles/main.dir/src/game_logic/game_logic.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/isel/GIT/PGTB3/src/game_logic/game_logic.c -o CMakeFiles/main.dir/src/game_logic/game_logic.c.s
 
 CMakeFiles/main.dir/src/main.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isel/Desktop/WM_TB3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/main.c.o   -c /home/isel/Desktop/WM_TB3/src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isel/GIT/PGTB3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/main.c.o   -c /home/isel/GIT/PGTB3/src/main.c
 
 CMakeFiles/main.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/isel/Desktop/WM_TB3/src/main.c > CMakeFiles/main.dir/src/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/isel/GIT/PGTB3/src/main.c > CMakeFiles/main.dir/src/main.c.i
 
 CMakeFiles/main.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/isel/Desktop/WM_TB3/src/main.c -o CMakeFiles/main.dir/src/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/isel/GIT/PGTB3/src/main.c -o CMakeFiles/main.dir/src/main.c.s
 
 CMakeFiles/main.dir/src/utils/utils.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/utils/utils.c.o: ../src/utils/utils.c
+<<<<<<< Updated upstream
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isel/Desktop/WM_TB3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/utils/utils.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/utils/utils.c.o   -c /home/isel/Desktop/WM_TB3/src/utils/utils.c
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isel/GIT/PGTB3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/src/utils/utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/utils/utils.c.o   -c /home/isel/GIT/PGTB3/src/utils/utils.c
+>>>>>>> Stashed changes
 
 CMakeFiles/main.dir/src/utils/utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/utils/utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/isel/Desktop/WM_TB3/src/utils/utils.c > CMakeFiles/main.dir/src/utils/utils.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/isel/GIT/PGTB3/src/utils/utils.c > CMakeFiles/main.dir/src/utils/utils.c.i
 
 CMakeFiles/main.dir/src/utils/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/utils/utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/isel/Desktop/WM_TB3/src/utils/utils.c -o CMakeFiles/main.dir/src/utils/utils.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/isel/GIT/PGTB3/src/utils/utils.c -o CMakeFiles/main.dir/src/utils/utils.c.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -109,8 +114,14 @@ main: CMakeFiles/main.dir/src/game_logic/game_logic.c.o
 main: CMakeFiles/main.dir/src/main.c.o
 main: CMakeFiles/main.dir/src/utils/utils.c.o
 main: CMakeFiles/main.dir/build.make
+<<<<<<< Updated upstream
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/isel/Desktop/WM_TB3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable main"
+=======
+main: /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
+main: CMakeFiles/main.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/isel/GIT/PGTB3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable main"
+>>>>>>> Stashed changes
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +134,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /home/isel/Desktop/WM_TB3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/isel/Desktop/WM_TB3 /home/isel/Desktop/WM_TB3 /home/isel/Desktop/WM_TB3/build /home/isel/Desktop/WM_TB3/build /home/isel/Desktop/WM_TB3/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/isel/GIT/PGTB3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/isel/GIT/PGTB3 /home/isel/GIT/PGTB3 /home/isel/GIT/PGTB3/build /home/isel/GIT/PGTB3/build /home/isel/GIT/PGTB3/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 

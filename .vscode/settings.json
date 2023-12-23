@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "time.h": "c",
+        "game_logic.h": "c",
+        "common.h": "c",
+        "stdbool.h": "c",
+        "glfw3.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "printf.h": "c",
+        "unistd.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
