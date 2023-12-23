@@ -6,5 +6,5 @@ C_FLAGS =
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/isel/Desktop/WM_TB3/src 
+C_INCLUDES = -I/home/isel/GIT/PGTB3/src 
 

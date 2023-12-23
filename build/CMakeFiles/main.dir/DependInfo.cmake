@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/isel/Desktop/WM_TB3/src/game_logic/game_logic.c" "/home/isel/Desktop/WM_TB3/build/CMakeFiles/main.dir/src/game_logic/game_logic.c.o"
-  "/home/isel/Desktop/WM_TB3/src/main.c" "/home/isel/Desktop/WM_TB3/build/CMakeFiles/main.dir/src/main.c.o"
-  "/home/isel/Desktop/WM_TB3/src/utils/utils.c" "/home/isel/Desktop/WM_TB3/build/CMakeFiles/main.dir/src/utils/utils.c.o"
+  "/home/isel/GIT/PGTB3/src/game_logic/game_logic.c" "/home/isel/GIT/PGTB3/build/CMakeFiles/main.dir/src/game_logic/game_logic.c.o"
+  "/home/isel/GIT/PGTB3/src/main.c" "/home/isel/GIT/PGTB3/build/CMakeFiles/main.dir/src/main.c.o"
+  "/home/isel/GIT/PGTB3/src/utils/utils.c" "/home/isel/GIT/PGTB3/build/CMakeFiles/main.dir/src/utils/utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

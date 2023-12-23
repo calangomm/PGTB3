@@ -2,6 +2,10 @@
 #include "utils.h"
 #include "../include/common.h"
 
+
+/**
+ * Limpa o terminal, utilizando comandos específicos para Windows e outros sistemas operacionais.
+ */
 void limpar_terminal() {
     #ifdef _WIN32
         system("cls");
@@ -10,17 +14,23 @@ void limpar_terminal() {
     #endif
 }
 
-
+/**
+ * Limpa o buffer de entrada do teclado.
+ */
 void limpar_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
 
+/**
+ * Imprime uma carta, levando em consideração se está virada ou não.
+ *
+ * @param c A carta a ser impressa.
+ * @param v Flag indicando se a carta está virada para cima (0) ou para baixo (1).
+ */
 void imprimir_carta(Carta c, int v) {
-    const char *naipes[] = {"♣", "♦", "♥", "♠"}; // Naipes Unicode para uma saída mais bonita
-
-    // Códigos de cores ANSI
+    const char *naipes[] = {"♣", "♦", "♥", "♠"};
     const char *cor_vermelha = "\x1b[31m";
     const char *cor_reset = "\x1b[0m";
 
@@ -59,16 +69,23 @@ void imprimir_carta(Carta c, int v) {
     }
 }
 
-
-
-
+/**
+ * Imprime todas as cartas de um deck.
+ *
+ * @param deck O deck a ser impresso.
+ */
 void imprimir_deck(Deck *deck) {
     for (int i = 0; i < deck->indice; ++i) {
-        imprimir_carta(deck->cartas[i],0);
+        imprimir_carta(deck->cartas[i], 0);
     }
     printf("\n");
 }
 
+/**
+ * Imprime o estado atual do jogo, incluindo baralho, descarte e fundação.
+ *
+ * @param jogo Um ponteiro para a estrutura do jogo.
+ */
 void imprimir_jogo(Jogo *jogo) {
     printf("Baralho:\n");
     if (jogo->baralho.indice > 0) {
@@ -97,6 +114,3 @@ void imprimir_jogo(Jogo *jogo) {
 
     printf("\n\n");
 }
-
-
-
