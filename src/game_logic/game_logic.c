@@ -37,6 +37,15 @@ void inicializar_jogo(Jogo *jogo) {
     randomizar_deck(&jogo->baralho);
 
     jogo->descarte.indice = 0;
+<<<<<<< Updated upstream
+=======
+    jogo->fundacao[0].indice = 0;
+    jogo->fundacao[1].indice = 0;
+    jogo->fundacao[2].indice = 0;
+    jogo->fundacao[3].indice = 0;
+    jogo->jogadas = 0;
+    jogo->pontos = 0;
+>>>>>>> Stashed changes
 
     for (int i = 0; i < 4; ++i) {
         jogo->fundacao[i].indice = 0;
@@ -169,8 +178,102 @@ int checagem_fim_de_jogo(Jogo *jogo)
 
     if(fund0.numero == 13 && fund1.numero == 13 && fund2.numero == 13 && fund3.numero == 13){
         //jogo acabou
-        return 1;
+        return 0;
     }
     //jogo não acabou
+<<<<<<< Updated upstream
     return 0;
+=======
+    return 1;
+}
+
+void setup(Jogo *meu_jogo){
+    header.x = DIST_HEADER_LEFT;
+    header.y = DIST_HEADER_TOP;
+    header.width = HEADER_WIDTH;
+    header.height = HEADER_HEIGHT;
+
+    graph_baralho.x = DIST_HEADER_LEFT;
+    graph_baralho.y = DIST_HEADER_TOP+HEADER_HEIGHT+DIST_CARD_HEADER;
+    graph_baralho.width = CARD_WIDTH;
+    graph_baralho.height = CARD_HEIGHT;
+
+    mouse_last_cord.click = 0;
+
+    inicializar_jogo(meu_jogo);
+    render(meu_jogo);
+}
+
+char map_numero_para_letra(int numero) {
+    if (numero == 1) return 'a';
+    else if (numero == 10) return 't';
+    else if (numero == 11) return 'j';
+    else if (numero == 12) return 'q';
+    else if (numero == 13) return 'k';
+    else return '0' + numero;  // Converte outros números para caracteres ('2' a '9')
+}
+
+const char* transform_card_to_path(const Carta* carta, const char* path_folder_images) {
+    // Construa o sufixo com base na virada da carta
+    const char* sufixo = carta->virada == 0 ? "" : "b";
+
+    // Alocar memória para a string de caminho
+    char* caminho_da_carta = (char*)malloc(100);
+
+    if(carta->virada == 1 ){
+        sprintf(caminho_da_carta, "%s/%s.png", path_folder_images, sufixo);
+        return caminho_da_carta;
+    }
+
+    // Mapeie o número para uma letra
+    char letra_numero = map_numero_para_letra(carta->numero);
+
+    
+
+    // Formate o caminho da carta usando sprintf
+    sprintf(caminho_da_carta, "%s/%c%c%s.png", path_folder_images, "cdhs"[carta->naipe - 1], letra_numero, sufixo);
+
+    // Retorne o ponteiro para a string de caminho alocada dinamicamente
+    return caminho_da_carta;
+}
+
+// Função para liberar a memória alocada para o caminho da carta
+void liberar_caminho_da_carta(const char* caminho_da_carta) {
+    free((void*)caminho_da_carta);
+}
+
+
+void process_input(int *game_is_running) {
+    SDL_Event event;
+
+    while (SDL_PollEvent(&event)) {
+        switch (event.type) {
+            case SDL_QUIT:
+                *game_is_running = false;
+                break;
+
+            case SDL_MOUSEBUTTONDOWN:
+                if (event.button.button == SDL_BUTTON_LEFT) {
+                    // Botão esquerdo do mouse pressionado
+                    mouse_last_cord.x = event.button.x;
+                    mouse_last_cord.y = event.button.y;
+                    mouse_last_cord.click = 1;
+                    printf("Botão esquerdo do mouse pressionado em (%d, %d)\n", mouse_last_cord.x, mouse_last_cord.y);
+                }
+                break;
+
+            case SDL_KEYDOWN:
+                if (event.key.keysym.sym == SDLK_ESCAPE) {
+                    // Tecla ESC pressionada
+                    *game_is_running = false;
+                }
+                break;
+
+            // Adicione outros casos de eventos conforme necessário
+
+            default:
+                break;
+        }
+    }
+>>>>>>> Stashed changes
 }

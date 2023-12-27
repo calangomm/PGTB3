@@ -30,11 +30,25 @@ typedef struct {
     Deck baralho;
     Deck descarte;
     Deck fundacao[4];
+<<<<<<< Updated upstream
     time_t start_time;  
     time_t first_command_time;  //esta linha para armazenar o tempo do primeiro comando '1'
     int jogadas;              
 } Jogo;
 
+=======
+
+    int jogadas;
+    int pontos;
+} Jogo;
+
+struct mouse_last_cord{
+    int x;
+    int y;
+    int click;
+} mouse_last_cord;
+
+>>>>>>> Stashed changes
 void inicializar_carta(Carta *carta, int virada, int naipe, int numero);
 void retirar_carta(Deck *origem, Deck *destino, int virada);
 
@@ -50,5 +64,19 @@ void randomizar_deck(Deck *deck);
 void inicializar_jogo(Jogo *jogo);
 int checagem_fim_de_jogo(Jogo *jogo);
 
+<<<<<<< Updated upstream
+=======
+
+void setup(Jogo *meu_jogo);
+
+char map_numero_para_letra(int numero);
+
+const char* transform_card_to_path(const Carta* carta, const char* path_folder_images);
+
+void liberar_caminho_da_carta(const char* caminho_da_carta);
+
+void process_input(int *game_is_running);
+
+>>>>>>> Stashed changes
 
 #endif  // GAME_LOGIC_H

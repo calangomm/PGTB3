@@ -1,5 +1,6 @@
 #include "include/common.h"
 
+<<<<<<< Updated upstream
 int main() {
     printf("\n\nImprimindo Jogo:\n\n");
     Jogo meu_jogo;
@@ -63,6 +64,38 @@ int main() {
 
         printf("Tempo decorrido: %.2lf segundos\n", tempo_decorrido);
         printf("Número de jogadas: %d\n", meu_jogo.jogadas);
+=======
+int game_is_running = false;
+
+void update(Jogo *meu_jogo, int *game_is_running){
+    //area jogavel
+    if(mouse_last_cord.y >= Y_AREA_JOGAVEL_INI && mouse_last_cord.y <= Y_AREA_JOGAVEL_FINAL)
+    {   
+        //baralho
+        if(mouse_last_cord.x >=  DIST_HEADER_LEFT && mouse_last_cord.x <= X_FINAL_BARALHO)atualizar_descarte(meu_jogo);
+        //descarte
+        else if(mouse_last_cord.x >=  X_INICIAL_DESCARTE && mouse_last_cord.x <= X_FINAL_DESCARTE)mover_para_fundacao(meu_jogo);
+    }
+    *game_is_running =checagem_fim_de_jogo(meu_jogo);    
+}
+
+int main() {
+    Jogo meu_jogo;
+    
+    game_is_running = inicializar_window();
+    printf("grafico inicializado com sucesso\n");
+
+    setup(&meu_jogo);
+    SDL_Event event;
+
+    while(game_is_running){
+        process_input(&game_is_running); // to implement
+        if(mouse_last_cord.click == 1){
+            update(&meu_jogo, &game_is_running);
+            mouse_last_cord.click = 0;
+        }
+        render(&meu_jogo);       
+>>>>>>> Stashed changes
     }
     return 0;
 }
