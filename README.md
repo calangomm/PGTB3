@@ -45,6 +45,8 @@ https://www.doxygen.nl/
 
 https://microtek.ac.in/adminassets/pdf/C_programming_notes_.pdf
 
+https://cmake.org/documentation/
+
 Sites para verificação dos pixels:
 
 https://pixspy.com/

@@ -145,7 +145,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=MeuProjetoC
+CMAKE_PROJECT_NAME:STATIC=SolitarioGame
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.0
@@ -224,12 +224,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Value Computed by CMake
-MeuProjetoC_BINARY_DIR:STATIC=/home/isel/GIT/PGTB3/build
-
-//Value Computed by CMake
-MeuProjetoC_SOURCE_DIR:STATIC=/home/isel/GIT/PGTB3
-
 //Path to a file.
 SDL_IMAGE_INCLUDE_DIRS:PATH=/usr/include/SDL2
 
@@ -247,6 +241,12 @@ SDL_TTF_INCLUDE_DIRS:PATH=/usr/include/SDL
 
 //Path to a library.
 SDL_TTF_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
+
+//Value Computed by CMake
+SolitarioGame_BINARY_DIR:STATIC=/home/isel/GIT/PGTB3/build
+
+//Value Computed by CMake
+SolitarioGame_SOURCE_DIR:STATIC=/home/isel/GIT/PGTB3
 
 
 ########################
