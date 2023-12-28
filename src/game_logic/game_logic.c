@@ -1,7 +1,6 @@
-// game_logic/game_logic.c
 #include "../include/common.h"
+#include "game_logic.h"
 #include <stdlib.h>
-
 
 void inicializar_carta(Carta *carta, int virada, int naipe, int numero) {
     carta->virada = virada;
@@ -37,6 +36,11 @@ void inicializar_jogo(Jogo *jogo) {
     randomizar_deck(&jogo->baralho);
 
     jogo->descarte.indice = 0;
+    jogo->fundacao[0].indice = 0;
+    jogo->fundacao[1].indice = 0;
+    jogo->fundacao[2].indice = 0;
+    jogo->fundacao[3].indice = 0;
+    jogo->pontos = 0;
 
     for (int i = 0; i < 4; ++i) {
         jogo->fundacao[i].indice = 0;
@@ -100,7 +104,6 @@ void atualizar_descarte(Jogo *jogo) {
         retirar_carta(&jogo->baralho, &jogo->descarte, 0);
 
         // Imprimir mensagem indicando a ação
-        printf("Uma carta foi movida do baralho para o descarte.\n");
     } else if (jogo->descarte.indice > 0) {
         // Se o baralho estiver vazio, mover todas as cartas do descarte para o baralho
         while (jogo->descarte.indice > 0) {
@@ -133,7 +136,7 @@ int mover_para_fundacao(Jogo *jogo) {
                 if (topo_fundacao.naipe == origem.naipe && topo_fundacao.numero +1 == origem.numero) {
                     // Mover a carta para a fundação
                     retirar_carta(&jogo->descarte, &jogo->fundacao[i], 0);
-                    printf("Uma carta foi movida do descarte para a fundação %d.\n", i + 1);
+                    jogo->pontos++;
                     return 1; // Retornar 1 indicando sucesso
                 }
             }
@@ -145,7 +148,7 @@ int mover_para_fundacao(Jogo *jogo) {
                 if (jogo->fundacao[i].indice == 0) {
                     // Mover a carta para a fundação
                     retirar_carta(&jogo->descarte, &jogo->fundacao[i], 0);
-                    printf("Uma carta foi movida do descarte para a fundação %d.\n", i + 1);
+                    jogo->pontos++;
                     return 1; // Retornar 1 indicando sucesso
                 }
             }
@@ -159,8 +162,7 @@ int mover_para_fundacao(Jogo *jogo) {
     }
 }
 
-
-int checagem_fim_de_jogo(Jogo *jogo)
+void checagem_fim_de_jogo(Jogo *jogo, int *game_is_running)
 {
     Carta fund0 = jogo->fundacao[0].cartas[jogo->fundacao[0].indice - 1];
     Carta fund1 = jogo->fundacao[1].cartas[jogo->fundacao[1].indice - 1];
@@ -169,8 +171,100 @@ int checagem_fim_de_jogo(Jogo *jogo)
 
     if(fund0.numero == 13 && fund1.numero == 13 && fund2.numero == 13 && fund3.numero == 13){
         //jogo acabou
-        return 1;
+        *game_is_running = 0;
+    };
+}
+
+char map_numero_para_letra(int numero) {
+    if (numero == 1) return 'a';
+    else if (numero == 10) return 't';
+    else if (numero == 11) return 'j';
+    else if (numero == 12) return 'q';
+    else if (numero == 13) return 'k';
+    else return '0' + numero;  // Converte outros números para caracteres ('2' a '9')
+}
+
+const char* transform_card_to_path(const Carta* carta, const char* path_folder_images) {
+    // Construa o sufixo com base na virada da carta
+    const char* sufixo = carta->virada == 0 ? "" : "b";
+
+    // Alocar memória para a string de caminho
+    char* caminho_da_carta = (char*)malloc(100);
+
+    if(carta->virada == 1 ){
+        sprintf(caminho_da_carta, "%s/%s.png", path_folder_images, sufixo);
+        return caminho_da_carta;
     }
-    //jogo não acabou
-    return 0;
+
+    // Mapeie o número para uma letra
+    char letra_numero = map_numero_para_letra(carta->numero);
+
+    
+
+    // Formate o caminho da carta usando sprintf
+    sprintf(caminho_da_carta, "%s/%c%c%s.png", path_folder_images, "cdhs"[carta->naipe - 1], letra_numero, sufixo);
+
+    // Retorne o ponteiro para a string de caminho alocada dinamicamente
+    return caminho_da_carta;
+}
+
+// Função para liberar a memória alocada para o caminho da carta
+void liberar_caminho_da_carta(const char* caminho_da_carta) {
+    free((void*)caminho_da_carta);
+}
+
+void setup(Jogo *jogo) {
+    inicializar_jogo(jogo);
+
+    time_show.s = 0;
+    time_show.m = 0;
+}
+
+// Função para calcular a diferença de tempo e atualizar a estrutura TimeShow
+void calcular_diferenca_tempo(Jogo *jogo) {
+    if (jogo->first_command_time == 1) {
+        // Obter o tempo atual
+        int tempo_atual = SDL_GetTicks();
+
+        // Calcular a diferença de tempo em milissegundos
+        int diferenca_tempo_ms = tempo_atual - jogo->start_time;
+
+        // Converter milissegundos para segundos e minutos
+        int segundos = diferenca_tempo_ms / 1000;
+        int minutos = segundos / 60;
+
+        // Atualizar a estrutura TimeShow
+        time_show.s = segundos % 60;
+        time_show.m = minutos;
+    }
+}
+
+void update(int *last_frame_time, int *game_is_running, Jogo *jogo) {
+    //while(!SDL_TICKS_PASSED(SDL_GetTicks(), *last_frame_time + FRAME_TARGET_TIME));
+
+    // Store the milliseconds of the current frame to be used in the next one
+    *last_frame_time = SDL_GetTicks();
+
+    calcular_diferenca_tempo(jogo);
+    
+    //area jogavel
+    if(mouse_last_cord.y >= Y_AREA_JOGAVEL_INI && mouse_last_cord.y <= Y_AREA_JOGAVEL_FINAL)
+    {   
+        //baralho
+        if(mouse_last_cord.x >=  DIST_HEADER_LEFT && mouse_last_cord.x <= X_FINAL_BARALHO)
+        {
+            atualizar_descarte(jogo);
+            mouse_last_cord.x = 0;
+            mouse_last_cord.y = 0;
+            jogo->jogadas++;
+        }
+        //descarte
+        else if(mouse_last_cord.x >=  X_INICIAL_DESCARTE && mouse_last_cord.x <= X_FINAL_DESCARTE){
+            mover_para_fundacao(jogo);
+            mouse_last_cord.x = 0;
+            mouse_last_cord.y = 0;
+            jogo->jogadas++;
+        }
+    }
+    checagem_fim_de_jogo(jogo,game_is_running);
 }
