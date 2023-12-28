@@ -136,6 +136,14 @@ Aqui estão os passos para compilar o projeto:
    cmake ..
    make
    ```
+
+<p align="center">
+	<img src="doc/screenshots/compile_step_1.PNG" width="350" title="cmake step">
+</p>
+<p align="center">
+	<img src="doc/screenshots/compile_step_2.PNG" width="350" alt="makefile step">
+<p>
+
 3. Certifique-se de ter todas as dependências instaladas.
 
 4. O executável será gerado no diretório game. Execute-o usando:
@@ -144,13 +152,11 @@ Aqui estão os passos para compilar o projeto:
    game
    ```
 
-
 <p align="center">
-	<img src="doc/screenshots/compile_step_1.PNG" width="350" title="cmake step">
-</p>
-<p align="center">
-	<img src="doc/screenshots/compile_step_2.PNG" width="350" alt="makefile step">
+	<img src="doc/screenshots/compile_step_3.PNG" width="350" alt="makefile step">
 <p>
+
+
 
 
 
