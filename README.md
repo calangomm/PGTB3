@@ -146,9 +146,11 @@ Aqui estão os passos para compilar o projeto:
 
 
 <p align="center">
-  <img src="doc/screenshots/compile_step_1.PNG" width="350" title="cmake step">
-  <img src="doc/screenshots/compile_step_2.PNG" width="350" alt="makefile step">
+	<img src="doc/screenshots/compile_step_1.PNG" width="350" title="cmake step">
 </p>
+<p align="center">
+	<img src="doc/screenshots/compile_step_2.PNG" width="350" alt="makefile step">
+<p>
 
 
 
