@@ -19,6 +19,7 @@
         "errno.h": "c",
         "sdl_image.h": "c",
         "comm.h": "c",
-        "components.h": "c"
+        "components.h": "c",
+        "ui.h": "c"
     }
 }

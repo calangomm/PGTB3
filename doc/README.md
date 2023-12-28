@@ -1,3 +1,5 @@
+A documentação do proffs é uma merda, não use ela, uso de ram vai pro krlho sempre
+
 #Estrutura básica:
 src/: Para códigos-fonte.
 lib/: Para bibliotecas externas, como 'libpg'.
@@ -28,3 +30,21 @@ tests/: Testes unitários e de integração. (Se você fizer, eu normalmente n f
 bin/: Arquivos executáveis compilados.
 
 scripts/: Scripts úteis, como scripts de build.
+
+Bibliografia:
+
+www.youtube.com/watch?v=XfZ6WrV5Z7Y -- Creating a Game Loop with C & SDL (Tutorial)
+
+wiki.libsdl.org
+
+https://stackoverflow.com/questions/75622498/cmake-cannot-find-sdl2-no-matter-what-i-try
+
+https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html
+
+https://www.doxygen.nl/
+
+https://microtek.ac.in/adminassets/pdf/C_programming_notes_.pdf
+
+Sites para verificação dos pixels:
+
+https://pixspy.com/

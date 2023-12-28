@@ -1,0 +1,3 @@
+/home/isel/GIT/PGTB3/build/CMakeFiles/rebuild_cache.dir
+/home/isel/GIT/PGTB3/build/CMakeFiles/edit_cache.dir
+/home/isel/GIT/PGTB3/build/CMakeFiles/game.dir

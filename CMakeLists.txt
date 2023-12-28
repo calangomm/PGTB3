@@ -25,13 +25,15 @@ find_library(SDL_IMAGE_LIBRARIES NAMES SDL2_image)
 include_directories(${SDL_INCLUDE_DIRS} ${SDL_TTF_INCLUDE_DIRS} ${SDL_IMAGE_INCLUDE_DIRS})
 
 # Lista de todos os arquivos .c em src
-file(GLOB SOURCES "src/*.c" "src/game_logic/*.c" "src/utils/*.c")
+file(GLOB SOURCES "src/*.c" "src/game_logic/*.c" "src/utils/*.c" "src/ui/*.c")
 
 # Cria o executável game a partir dos arquivos .c
 add_executable(game ${SOURCES})
 
 # Link com as bibliotecas SDL, SDL_ttf, SDL2_image
 target_link_libraries(game ${SDL_LIBRARIES} ${SDL_TTF_LIBRARIES} ${SDL_IMAGE_LIBRARIES})
+
+
 
 # Copie o diretório de assets para o diretório de build
 file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})

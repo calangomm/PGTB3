@@ -1,13 +1,28 @@
 #include "../include/common.h"
 #include "ui.h"
+#include <stdbool.h>
+
 
 #define FONT_PATH "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
+
+/**
+ * @brief Inicializa a janela SDL, o renderizador e a fonte TTF.
+ *
+ * @param window Ponteiro para a variável que receberá a janela SDL.
+ * @param renderer Ponteiro para a variável que receberá o renderizador SDL.
+ * @param font Ponteiro para a variável que receberá a fonte TTF.
+ *
+ * @return Retorna verdadeiro (true) se a inicialização for bem-sucedida, falso (false) caso contrário.
+ */
 int initialize_window(SDL_Window **window, SDL_Renderer **renderer, TTF_Font **font) {
+    // Inicializar SDL
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         fprintf(stderr, "Error initializing SDL.\n");
         return false;
     }
+
+    // Criar janela SDL
     *window = SDL_CreateWindow(
         "Solitario",
         SDL_WINDOWPOS_CENTERED,
@@ -20,6 +35,8 @@ int initialize_window(SDL_Window **window, SDL_Renderer **renderer, TTF_Font **f
         fprintf(stderr, "Error creating SDL Window.\n");
         return false;
     }
+
+    // Criar renderizador SDL
     *renderer = SDL_CreateRenderer(*window, -1, 0);
     if (!(*renderer)) {
         fprintf(stderr, "Error creating SDL Renderer.\n");
@@ -42,24 +59,35 @@ int initialize_window(SDL_Window **window, SDL_Renderer **renderer, TTF_Font **f
     return true;
 }
 
+
+/**
+ * @brief Processa os eventos de entrada do usuário.
+ *
+ * @param game_is_running Ponteiro para a variável que indica se o jogo está em execução.
+ * @param jogo Ponteiro para a estrutura que representa o estado do jogo.
+ */
 void process_input(int *game_is_running, Jogo *jogo) {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
         switch (event.type) {
             case SDL_QUIT:
+                // Evento de fechamento da janela
                 *game_is_running = false;
                 break;
             case SDL_KEYDOWN:
+                // Tecla do teclado pressionada
                 if (event.key.keysym.sym == SDLK_ESCAPE) {
                     *game_is_running = false;
                 }
                 break;
             case SDL_MOUSEBUTTONDOWN:
+                // Botão do mouse pressionado
                 if (event.button.button == SDL_BUTTON_LEFT) {
                     // Botão esquerdo do mouse pressionado
                     mouse_last_cord.x = event.button.x;
                     mouse_last_cord.y = event.button.y;
 
+                    // Iniciar o contador de inicio de game
                     if(jogo->start_time == 0)
                     {
                         jogo->start_time = SDL_GetTicks();
@@ -74,6 +102,17 @@ void process_input(int *game_is_running, Jogo *jogo) {
 }
 
 
+/**
+ * @brief Desenha um retângulo no renderer SDL.
+ *
+ * @param renderer Ponteiro para o renderer onde o retângulo será desenhado.
+ * @param x Coordenada x do canto superior esquerdo do retângulo.
+ * @param y Coordenada y do canto superior esquerdo do retângulo.
+ * @param width Largura do retângulo.
+ * @param height Altura do retângulo.
+ * @param color Cor do retângulo (R, G, B, A).
+ * @param filled Indica se o retângulo deve ser preenchido (true) ou apenas contornado (false).
+ */
 void draw_rectangle(SDL_Renderer *renderer, int x, int y, int width, int height, SDL_Color color, bool filled) {
     // Definindo a cor para o retângulo (R, G, B, A)
     SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
@@ -83,19 +122,32 @@ void draw_rectangle(SDL_Renderer *renderer, int x, int y, int width, int height,
 
     // Desenhando o retângulo
     if (filled) {
+        // Preencher o retângulo
         SDL_RenderFillRect(renderer, &rect);
     } else {
+        // Contornar o retângulo
         SDL_RenderDrawRect(renderer, &rect);
     }
 }
 
+
+/**
+ * @brief Carrega uma textura a partir de um arquivo de imagem.
+ *
+ * @param renderer Ponteiro para o renderer SDL onde a textura será utilizada.
+ * @param path Caminho para o arquivo de imagem.
+ *
+ * @return Retorna um ponteiro para a textura carregada ou NULL em caso de erro.
+ */
 SDL_Texture* load_texture(SDL_Renderer *renderer, const char *path) {
+    // Carregar a imagem como uma superfície SDL
     SDL_Surface *surface = IMG_Load(path);
     if (!surface) {
         fprintf(stderr, "Error loading image %s: %s\n", path, IMG_GetError());
         return NULL;
     }
 
+    // Criar uma textura a partir da superfície carregada
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
     if (!texture) {
         fprintf(stderr, "Error creating texture: %s\n", SDL_GetError());
@@ -103,30 +155,55 @@ SDL_Texture* load_texture(SDL_Renderer *renderer, const char *path) {
         return NULL;
     }
 
+    // Liberar a superfície, já que a textura foi criada
     SDL_FreeSurface(surface);
     return texture;
 }
 
+
+/**
+ * @brief Desenha uma imagem em um renderer SDL.
+ *
+ * @param renderer Ponteiro para o renderer onde a imagem será desenhada.
+ * @param path Caminho para o arquivo de imagem.
+ * @param x Coordenada x do canto superior esquerdo da imagem.
+ * @param y Coordenada y do canto superior esquerdo da imagem.
+ * @param width Largura da imagem.
+ * @param height Altura da imagem.
+ */
 void draw_image(SDL_Renderer *renderer, const char *path, int x, int y, int width, int height) {
+    // Carrega a textura da imagem
     SDL_Texture *image_texture = load_texture(renderer, path);
     if (!image_texture) {
         return; // Não foi possível carregar a textura da imagem
     }
 
+    // Define o retângulo de destino para o desenho da imagem
     SDL_Rect dest_rect = {x, y, width, height};
 
     // Desenha a textura na tela
     SDL_RenderCopy(renderer, image_texture, NULL, &dest_rect);
 
-    // Libera a textura
+    // Libera a textura, já que não será mais necessária
     SDL_DestroyTexture(image_texture);
 }
 
+
+/**
+ * @brief Desenha uma carta no cabeçalho do jogo.
+ *
+ * @param renderer Ponteiro para o renderer onde a carta será desenhada.
+ * @param carta Ponteiro para a estrutura que representa a carta.
+ * @param path Caminho base para os arquivos de imagem das cartas.
+ * @param x Coordenada x do canto superior esquerdo da carta.
+ * @param y Coordenada y do canto superior esquerdo da carta.
+ */
 void desenha_carta_header(SDL_Renderer *renderer,Carta *carta, const char *path, int x, int y)
 {
     const char* caminho_da_carta = transform_card_to_path(carta, path);
     draw_image(renderer, caminho_da_carta, x, y, CARD_WIDTH, CARD_HEIGHT);
 }
+
 
 /**
  * Renderiza um texto em um renderer SDL com opções de posicionamento, tamanho e cores.
@@ -181,12 +258,26 @@ void render_text(SDL_Renderer *renderer, TTF_Font *font, const char *text, int x
     SDL_DestroyTexture(textTexture);
 }
 
+
+/**
+ * @brief Formata o tempo em minutos e segundos para uma string no formato "MM:SS".
+ *
+ * @param stringFormatada Ponteiro para a string onde o tempo formatado será armazenado.
+ * @param minutos Valor dos minutos.
+ * @param segundos Valor dos segundos.
+ */
 void formatarTempo(char *stringFormatada, int minutos, int segundos) {
     sprintf(stringFormatada, "%02d:%02d", minutos, segundos);
 }
 
 
-
+/**
+ * @brief Renderiza o estado atual do jogo na tela.
+ *
+ * @param renderer Ponteiro para o renderer SDL onde o jogo será renderizado.
+ * @param jogo Ponteiro para a estrutura que representa o estado do jogo.
+ * @param font Ponteiro para a fonte TTF utilizada na renderização.
+ */
 void render(SDL_Renderer *renderer, Jogo *jogo, TTF_Font *font) {
     // cria o background e limpa a dela do que tinha antes
     SDL_SetRenderDrawColor(renderer, C_BACKGROUND.r, C_BACKGROUND.g, C_BACKGROUND.b, C_BACKGROUND.a);
@@ -214,42 +305,42 @@ void render(SDL_Renderer *renderer, Jogo *jogo, TTF_Font *font) {
                 desenha_carta_header(renderer, &jogo->baralho.cartas[jogo->baralho.indice-1],
                                     "../assets/images/cards", cartas_desenho.x, cartas_desenho.y);
             }
-            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,TRUE);
+            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,true);
             break;
         case 1:
             if(jogo->descarte.indice>0){
                 desenha_carta_header(renderer,&jogo->descarte.cartas[jogo->descarte.indice-1],
                                     "../assets/images/cards", cartas_desenho.x, cartas_desenho.y);
             }
-            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,TRUE);
+            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,true);
             break;
         case 3:
             if(jogo->fundacao[i-3].indice>0){
                 desenha_carta_header(renderer,&jogo->fundacao[i-3].cartas[jogo->fundacao[i-3].indice-1],
                                     "../assets/images/cards", cartas_desenho.x, cartas_desenho.y);
             }
-            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,TRUE);
+            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,true);
             break;
         case 4:
             if(jogo->fundacao[i-3].indice>0){
                 desenha_carta_header(renderer,&jogo->fundacao[i-3].cartas[jogo->fundacao[i-3].indice-1],
                                     "../assets/images/cards", cartas_desenho.x, cartas_desenho.y);
             }
-            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,TRUE);
+            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,true);
             break;
         case 5:
             if(jogo->fundacao[i-3].indice>0){
                 desenha_carta_header(renderer,&jogo->fundacao[i-3].cartas[jogo->fundacao[i-3].indice-1],
                                     "../assets/images/cards", cartas_desenho.x, cartas_desenho.y);
             }
-            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,TRUE);
+            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,true);
             break;
         case 6:
             if(jogo->fundacao[i-3].indice>0){
                 desenha_carta_header(renderer,&jogo->fundacao[i-3].cartas[jogo->fundacao[i-3].indice-1],
                                     "../assets/images/cards", cartas_desenho.x, cartas_desenho.y);
             }
-            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,TRUE);
+            else  draw_rectangle(renderer,cartas_desenho.x,cartas_desenho.y,CARD_WIDTH,CARD_HEIGHT,C_CARDS_BACK,true);
             break;
         }
 
@@ -285,11 +376,19 @@ void render(SDL_Renderer *renderer, Jogo *jogo, TTF_Font *font) {
     render_text(renderer, font, buffer, DIST_L_H_TIMER_BOX,
                 DIST_TOP_H_PLAYS,TIMER_BOX_WIDHT,PLAY_BOX_HEIGHT,C_P_BACK_BOX,C_HEADER);
 
-    // Atualize a tela (renderize)
+    // Atualize a tela (renderiza)
     SDL_RenderPresent(renderer);
 
 }
 
+
+/**
+ * @brief Destrói os recursos associados à janela, ao renderer e à fonte TTF.
+ *
+ * @param window Ponteiro para a janela SDL a ser destruída.
+ * @param renderer Ponteiro para o renderer SDL a ser destruído.
+ * @param font Ponteiro para a fonte TTF a ser destruída.
+ */
 void destroy_window(SDL_Window **window, SDL_Renderer **renderer, TTF_Font **font) {
     SDL_DestroyRenderer(*renderer);
     SDL_DestroyWindow(*window);
