@@ -1,3 +1,0 @@
-/home/isel/Desktop/WM_TB3/build/CMakeFiles/rebuild_cache.dir
-/home/isel/Desktop/WM_TB3/build/CMakeFiles/edit_cache.dir
-/home/isel/Desktop/WM_TB3/build/CMakeFiles/main.dir
