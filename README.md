@@ -141,6 +141,18 @@ Aqui estão os passos para compilar o projeto:
    cmake ..
    make
    ```
+3. Certifique-se de ter todas as dependências instaladas.
+
+4. O executável será gerado no diretório game. Execute-o usando:
+
+	```bash
+   game
+   ```
+
+
+`compile_step_1.png` `compile_step_2.png`
+
+
 
 
 
