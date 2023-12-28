@@ -2,6 +2,12 @@
 
 Trabalho da cadeira de PG, onde temos que criar uma versão de solitario em C utilizando SDL2
 
+```
+git status
+git add
+git commit
+```
+
 ## Estrutura de Diretórios
 
 - **src/:** Contém o código-fonte do projeto.
@@ -122,6 +128,21 @@ Trabalho da cadeira de PG, onde temos que criar uma versão de solitario em C ut
         ├── utils.c
         └── utils.h
 ```
+## Como Compilar o Projeto
+
+Aqui estão os passos para compilar o projeto:
+
+1. Abra um terminal no diretório raiz do projeto.
+
+2. Execute o comando de compilação:
+
+   ```bash
+   cd build
+   cmake ..
+   make
+   ```
+
+
 
 ## Bibliografia
 
@@ -131,6 +152,9 @@ Trabalho da cadeira de PG, onde temos que criar uma versão de solitario em C ut
 - [C Coding Standard](https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html)
 - [Doxygen Documentation](https://www.doxygen.nl/)
 - [C Programming Notes (PDF)](https://microtek.ac.in/adminassets/pdf/C_programming_notes_.pdf)
+- [Getting Started with CMake](https://cmake.org/getting-started/)
+- [CMake Reference Documentation](https://cmake.org/cmake/help/latest/)
+- [Get started with GitHub documentation](https://docs.github.com/en/get-started)
 
 ## Ferramentas
 
