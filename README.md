@@ -2,11 +2,6 @@
 
 Trabalho da cadeira de PG, onde temos que criar uma versão de solitario em C utilizando SDL2
 
-```
-git status
-git add
-git commit
-```
 
 ## Estrutura de Diretórios
 
@@ -150,7 +145,10 @@ Aqui estão os passos para compilar o projeto:
    ```
 
 
-`compile_step_1.png` `compile_step_2.png`
+<p align="center">
+  <img src="doc/screenshots/compile_step_1.PNG" width="350" title="cmake step">
+  <img src="doc/screenshots/compile_step_2.PNG" width="350" alt="makefile step">
+</p>
 
 
 
