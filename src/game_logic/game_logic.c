@@ -521,6 +521,7 @@ void move_carta_fund_pilha(Deck *destino, Jogo *jogo)
         if (mouse_last_cord.x >= X_I_PILHA4 + (i - 1) * (CARD_WIDTH + CARDS_DIST) &&
             mouse_last_cord.x <= X_I_PILHA4 + i * CARD_WIDTH + (i - 1) * CARDS_DIST) {
             retirar_carta(&jogo->fundacao[i], destino, 0); 
+            jogo->jogadas++;
             break;
         }
     }
@@ -560,7 +561,7 @@ int process_selecao(int primeira, int segunda, Jogo *jogo){
     if(primeira == 0) //descarte
     {   if (segunda >= 1 && segunda <= 7){
             printf("Move descarte a pilha%d!!\n", segunda);
-            move_pilha_pilha(&jogo->descarte, &jogo->pilhas[segunda - 1], jogo->nivel); //move descarte para pilhas
+            if(move_pilha_pilha(&jogo->descarte, &jogo->pilhas[segunda - 1], jogo->nivel))jogo->jogadas++; //move descarte para pilhas
         }
         if(segunda == 8)
         {
@@ -570,7 +571,7 @@ int process_selecao(int primeira, int segunda, Jogo *jogo){
     // Movimentação pilha a pilha
     else if (segunda >= 1 && segunda <= 7 && primeira >= 1 && primeira <= 7 ) {
         printf("Move pilha a pilha!!\n");
-        move_pilha_pilha(&jogo->pilhas[primeira - 1], &jogo->pilhas[segunda - 1], jogo->nivel); //pilha para pilha
+        if(move_pilha_pilha(&jogo->pilhas[primeira - 1], &jogo->pilhas[segunda - 1], jogo->nivel)) jogo->jogadas++; //pilha para pilha
     }
     // Movimentação de carta para a fundação
     else if (segunda == 8) {
