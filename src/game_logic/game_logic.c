@@ -32,8 +32,6 @@ void randomizar_deck(Deck *deck) {
     }
 }
 
-<<<<<<< Updated upstream
-=======
 
 /**
  * @brief Envia as cartas de baralho para as pilhas 
@@ -59,7 +57,6 @@ void enviar_para_pilhas(Jogo *jogo){
  *
  * @param jogo Ponteiro para a estrutura de jogo a ser inicializada.
  */
->>>>>>> Stashed changes
 void inicializar_jogo(Jogo *jogo) {
     inicializar_deck(&jogo->baralho);
     randomizar_deck(&jogo->baralho);
@@ -171,12 +168,8 @@ int mover_para_fundacao(Jogo *jogo) {
                 if (topo_fundacao.naipe == origem.naipe && topo_fundacao.numero +1 == origem.numero) {
                     // Mover a carta para a fundação
                     retirar_carta(&jogo->descarte, &jogo->fundacao[i], 0);
-<<<<<<< Updated upstream
-                    printf("Uma carta foi movida do descarte para a fundação %d.\n", i + 1);
-=======
                     jogo->pontos++;
                     jogo->jogadas++;
->>>>>>> Stashed changes
                     return 1; // Retornar 1 indicando sucesso
                 }
             }
@@ -188,12 +181,8 @@ int mover_para_fundacao(Jogo *jogo) {
                 if (jogo->fundacao[i].indice == 0) {
                     // Mover a carta para a fundação
                     retirar_carta(&jogo->descarte, &jogo->fundacao[i], 0);
-<<<<<<< Updated upstream
-                    printf("Uma carta foi movida do descarte para a fundação %d.\n", i + 1);
-=======
                     jogo->pontos++;
                     jogo->jogadas++;
->>>>>>> Stashed changes
                     return 1; // Retornar 1 indicando sucesso
                 }
             }
@@ -208,7 +197,7 @@ int mover_para_fundacao(Jogo *jogo) {
 }
 
 
-int checagem_fim_de_jogo(Jogo *jogo)
+void checagem_fim_de_jogo(Jogo *jogo, int *game_is_running)
 {
     Carta fund0 = jogo->fundacao[0].cartas[jogo->fundacao[0].indice - 1];
     Carta fund1 = jogo->fundacao[1].cartas[jogo->fundacao[1].indice - 1];
@@ -217,12 +206,6 @@ int checagem_fim_de_jogo(Jogo *jogo)
 
     if(fund0.numero == 13 && fund1.numero == 13 && fund2.numero == 13 && fund3.numero == 13){
         //jogo acabou
-<<<<<<< Updated upstream
-        return 1;
-    }
-    //jogo não acabou
-    return 0;
-=======
         *game_is_running = 0;
     };
 }
@@ -525,5 +508,4 @@ void update(int *last_frame_time, int *game_is_running, Jogo *jogo) {
     }
     
     checagem_fim_de_jogo(jogo,game_is_running);
->>>>>>> Stashed changes
 }

@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 #ifndef UI_H
 #define UI_H
 
@@ -224,4 +222,3 @@ void render(SDL_Renderer *renderer, Jogo *jogo, TTF_Font *font);
 void destroy_window(SDL_Window **window, SDL_Renderer **renderer, TTF_Font **font);
 
 #endif
->>>>>>> Stashed changes

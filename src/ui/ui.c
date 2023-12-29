@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 #include "../include/common.h"
 #include "ui.h"
 #include <stdbool.h>
@@ -413,5 +411,4 @@ void destroy_window(SDL_Window **window, SDL_Renderer **renderer, TTF_Font **fon
 
     SDL_Quit();
 }
->>>>>>> Stashed changes
 
