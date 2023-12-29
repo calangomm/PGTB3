@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/game.dir/src/game_logic/game_logic.c.o CMakeFiles/game.dir/src/main.c.o CMakeFiles/game.dir/src/ui/ui.c.o CMakeFiles/game.dir/src/utils/utils.c.o  -o game  /usr/lib/x86_64-linux-gnu/libSDL2.so /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so /usr/lib/x86_64-linux-gnu/libSDL2_image.so 

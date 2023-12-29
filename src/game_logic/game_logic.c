@@ -305,23 +305,84 @@ void calcular_diferenca_tempo(Jogo *jogo) {
     }
 }
 
-int move_pilha_pilha(Deck *origem, Deck *destino)
+
+int move_pilha_pilha(Deck *origem, Deck *destino, int nivel)
 {
-    if(destino->indice==0)
+    bool carta_seguinte = false;
+
+    if(destino->indice==0 && nivel != 3)
     {
         if(origem->cartas[origem->indice - 1].numero==13)
         {
             retirar_carta(origem, destino, 0);
+            return 1;
         }
         else return 0;
     }
-    else if(cores_diferentes(origem->cartas[origem->indice - 1],
-                        destino->cartas[destino->indice - 1]))
+    else if(destino->indice!=0 && nivel != 3)
     {
-        printf("cores diferentes, movendo\n");
-        retirar_carta(origem, destino, 0);
-        return 1;
+        carta_seguinte = origem->cartas[origem->indice-1].numero == destino->cartas[destino->indice-1].numero - 1;
+        if(cores_diferentes(origem->cartas[origem->indice - 1],
+                            destino->cartas[destino->indice - 1])
+                            && carta_seguinte)
+        {
+            printf("cores diferentes, movendo\n");
+            retirar_carta(origem, destino, 0);
+            return 1;
+        }
     }
+    else if(nivel == 3){
+        int indice = origem->indice;
+        int numero_desejado = 0;
+
+        if(destino->indice==0)
+        {
+            printf("Pilha de destino não possiu cartas!\n");
+            numero_desejado = 14;
+            carta_seguinte = origem->cartas[indice-1].numero == numero_desejado - 1;
+        }
+        else{
+            numero_desejado = destino->cartas[destino->indice-1].numero;
+            carta_seguinte = origem->cartas[indice-1].numero == numero_desejado - 1;
+        }
+
+        for(;!(carta_seguinte) && (origem->cartas[indice-1].virada ==0) && indice > 0  ;indice --)
+        {
+            carta_seguinte = origem->cartas[indice-1].numero == numero_desejado - 1;
+            if(carta_seguinte)break;
+        }
+
+        int counter = 0;
+
+        if(destino->indice == 0 && carta_seguinte)
+        {
+            printf("destino->indice == 0 && carta_seguinte!\n");
+            for(int i = indice; i<=origem->indice;i++){
+                destino->cartas[destino->indice] = origem->cartas[i-1];
+                counter++;
+                destino->indice++;
+            }
+            origem->indice = origem->indice - counter;
+            return 1;
+        }
+
+        if(!cores_diferentes(origem->cartas[indice - 1],
+                            destino->cartas[destino->indice - 1]))
+        {
+            return 0;
+        }
+        
+        for(int i = indice; i<=origem->indice;i++){
+                destino->cartas[destino->indice] = origem->cartas[i-1];
+                counter++;
+                destino->indice++;
+        }
+        printf("Carta encontrada para movimentação");
+        origem->indice = origem->indice - counter;
+        return 1;
+
+    }
+
 }
 
 
@@ -407,7 +468,7 @@ int process_selecao(int primeira, int segunda, Jogo *jogo) {
     if(primeira == 0) //descarte
     {   if (segunda >= 1 && segunda <= 7){
             printf("Move descarte a pilha%d!!\n", segunda);
-            move_pilha_pilha(&jogo->descarte, &jogo->pilhas[segunda - 1]); //move descarte para pilhas
+            move_pilha_pilha(&jogo->descarte, &jogo->pilhas[segunda - 1], jogo->nivel); //move descarte para pilhas
         }
         if(segunda == 8)
         {
@@ -417,7 +478,7 @@ int process_selecao(int primeira, int segunda, Jogo *jogo) {
     // Movimentação pilha a pilha
     else if (segunda >= 1 && segunda <= 7 && primeira >= 1 && primeira <= 7 ) {
         printf("Move pilha a pilha!!\n");
-        move_pilha_pilha(&jogo->pilhas[primeira - 1], &jogo->pilhas[segunda - 1]); //pilha para pilha
+        move_pilha_pilha(&jogo->pilhas[primeira - 1], &jogo->pilhas[segunda - 1], jogo->nivel); //pilha para pilha
     }
     // Movimentação de carta para a fundação
     else if (segunda == 8) {
@@ -473,7 +534,6 @@ void update(int *last_frame_time, int *game_is_running, Jogo *jogo) {
         }
         //descarte
         else if(mouse_last_cord.x >=  X_I_PILHA2 && mouse_last_cord.x <= X_F_PILHA2){
-            zera_mouse_cords();
             if(jogo->nivel==1){
                 mover_para_fundacao(jogo);
             }
@@ -481,14 +541,15 @@ void update(int *last_frame_time, int *game_is_running, Jogo *jogo) {
                 printf("Selecionado Descarte!!\n");
                 jogo->selecao = process_selecao(jogo->selecao, 0, jogo);
             }
+            zera_mouse_cords();
         }
         //fundação
         else if(mouse_last_cord.x >=  X_I_PILHA4 && mouse_last_cord.x <= X_F_PILHA7){    
-            zera_mouse_cords();
             if(jogo->nivel>1){
                 printf("Selecionado Fundacao!!\n");
                 jogo->selecao = process_selecao(jogo->selecao, 8, jogo);
             }
+            zera_mouse_cords();
         }
 
     }
