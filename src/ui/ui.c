@@ -389,6 +389,35 @@ void render(SDL_Renderer *renderer, Jogo *jogo, TTF_Font *font) {
 
     }
 
+    //feedback da seleção
+    switch (jogo->selecao)
+    {
+    case 0: //descarte
+        draw_rectangle(renderer, X_I_PILHA2, Y_AREA_JOGAVEL_INI, CARD_WIDTH, CARD_HEIGHT, C_SELECTED, false);
+        break;
+    case 1:
+        draw_rectangle(renderer, X_I_PILHA1, DIST_TABULEIRO_TOP, CARD_WIDTH, TABULEIRO_HEIGHT, C_SELECTED, false);
+        break;
+    case 2:
+        draw_rectangle(renderer, X_I_PILHA2, DIST_TABULEIRO_TOP, CARD_WIDTH, TABULEIRO_HEIGHT, C_SELECTED, false);
+        break;
+    case 3:
+        draw_rectangle(renderer, X_I_PILHA3, DIST_TABULEIRO_TOP, CARD_WIDTH, TABULEIRO_HEIGHT, C_SELECTED, false);
+        break;
+    case 4:
+        draw_rectangle(renderer, X_I_PILHA4, DIST_TABULEIRO_TOP, CARD_WIDTH, TABULEIRO_HEIGHT, C_SELECTED, false);
+        break;
+    case 5:
+        draw_rectangle(renderer, X_I_PILHA5, DIST_TABULEIRO_TOP, CARD_WIDTH, TABULEIRO_HEIGHT, C_SELECTED, false);
+        break;
+    case 6:
+        draw_rectangle(renderer, X_I_PILHA6, DIST_TABULEIRO_TOP, CARD_WIDTH, TABULEIRO_HEIGHT, C_SELECTED, false);
+        break;
+    case 7:
+        draw_rectangle(renderer, X_I_PILHA7, DIST_TABULEIRO_TOP, CARD_WIDTH, TABULEIRO_HEIGHT, C_SELECTED, false);
+        break;
+    }
+
     // Atualize a tela (renderiza)
     SDL_RenderPresent(renderer);
 

@@ -13,6 +13,8 @@
 
 #define NUM_PILHAS 7
 
+#define RANDOM_PRE_SET 1000 // ajustavel para melhorar a aleatoriedade
+
 // Inclusões de bibliotecas padrão
 #include "../include/common.h"
 #include <stdbool.h>
@@ -99,6 +101,16 @@ void inicializar_deck(Deck *deck);
  * @param deck Ponteiro para o deck a ser embaralhado.
  */
 void randomizar_deck(Deck *deck);
+
+
+/**
+ * @brief Envia as cartas de baralho para as pilhas 
+ * na ordem de inicialização do jogo, de 1 a 7
+ *
+ * @param jogo Ponteiro para a estrutura de jogo a ser processada
+ */
+void enviar_para_pilhas(Jogo *jogo);
+
 
 /**
  * @brief Inicializa a estrutura de jogo.
@@ -196,6 +208,55 @@ void setup(Jogo *jogo);
  * @param jogo Ponteiro para a estrutura de jogo.
  */
 void calcular_diferenca_tempo(Jogo *jogo);
+
+
+/**
+ * @brief Move cartas de um deck para outro, seguindo regras específicas.
+ *
+ * @param origem Deck de origem.
+ * @param destino Deck de destino.
+ * @param nivel Nível da operação (0 para movimento normal, 3 para movimento especial).
+ * @return 1 Se a movimentação foi bem-sucedida.
+ * @return 0 Se a movimentação falhou.
+ */
+int move_pilha_pilha(Deck *origem, Deck *destino, int nivel);
+
+
+/**
+ * @brief Move uma carta da pilha para a fundação, se possível.
+ *
+ * @param origem Ponteiro para o deck de origem (pilha).
+ * @param jogo Ponteiro para a estrutura do jogo.
+ */
+void move_carta_pilha_fund(Deck *origem, Jogo *jogo);
+
+
+/**
+ * @brief Move uma carta da fundação para a pilha, se possível.
+ *
+ * @param destino Ponteiro para o deck de destino (pilha).
+ * @param jogo Ponteiro para a estrutura do jogo.
+ */
+void move_carta_fund_pilha(Deck *destino, Jogo *jogo);
+
+
+/**
+ * @brief Processa a seleção de cartas ou pilhas durante o jogo.
+ *
+ * @param primeira Índice da seleção inicial.
+ * @param segunda Índice da seleção secundária.
+ * @param jogo Ponteiro para a estrutura do jogo.
+ * @return -1 se a seleção for inválida ou um índice correspondente à seleção.
+ */
+int process_selecao(int primeira, int segunda, Jogo *jogo);
+
+
+/**
+ * @brief Zera as coordenadas do mouse.
+ */
+void zera_mouse_cords(void);
+
+
 
 /**
  * @brief Atualiza o estado do jogo.

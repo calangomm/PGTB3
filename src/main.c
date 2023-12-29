@@ -1,7 +1,13 @@
-#include "include/common.h"             //inclue as bibliotecas gerais
+// Inclui as bibliotecas necessárias
+#include "include/common.h"             
 #include <stdio.h>
 
-//Função principal do código nivel1
+/**
+ * @brief Função principal do jogo para o nível específico.
+ *
+ * @param meu_jogo Ponteiro para a estrutura do jogo.
+ * @return Retorna 0 ao sair do jogo.
+ */
 int nivel(Jogo *meu_jogo) {
     // Variável que indica se o jogo está em execução
     int game_is_running = false;
@@ -45,7 +51,7 @@ int nivel(Jogo *meu_jogo) {
 }
 
 
-//Função principal do código
+// Função principal do programa
 int main(void) {
 
     Jogo meu_jogo;
@@ -53,6 +59,8 @@ int main(void) {
     char buffer[100];  // Buffer para armazenar caracteres inválidos
     int game_level =0;
 
+
+    //pequeno menu para executar os niveis pedidos no trabalho
     while(game_level == 0)
     {
         printf("\nSolitario PG Trabalho 3:\n");

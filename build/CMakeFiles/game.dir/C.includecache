@@ -50,6 +50,20 @@ SDL2/SDL_image.h
 ../ui/ui.h
 /home/isel/GIT/PGTB3/src/ui/ui.h
 
+/home/isel/GIT/PGTB3/src/main.c
+include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
+stdio.h
+-
+
+/home/isel/GIT/PGTB3/src/ui/ui.c
+../include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
+ui.h
+/home/isel/GIT/PGTB3/src/ui/ui.h
+stdbool.h
+-
+
 /home/isel/GIT/PGTB3/src/ui/ui.h
 SDL2/SDL.h
 -
@@ -57,6 +71,12 @@ stdbool.h
 -
 SDL_ttf.h
 -
+../include/common.h
+/home/isel/GIT/PGTB3/src/include/common.h
+
+/home/isel/GIT/PGTB3/src/utils/utils.c
+utils.h
+/home/isel/GIT/PGTB3/src/utils/utils.h
 ../include/common.h
 /home/isel/GIT/PGTB3/src/include/common.h
 

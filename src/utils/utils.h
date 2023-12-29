@@ -4,10 +4,14 @@
 
 #include "../include/common.h"
 
+//funções para mostrar as cartas no terminal
+
+
 /**
  * @brief Limpa o terminal.
  */
 void limpar_terminal();
+
 
 /**
  * @brief Limpa o buffer do teclado.

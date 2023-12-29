@@ -2,13 +2,27 @@
 #include "../include/common.h"
 #include <stdlib.h>
 
-
+// Protótipos de funções
+/**
+ * @brief Inicializa uma carta com os valores fornecidos.
+ *
+ * @param carta Ponteiro para a estrutura de carta a ser inicializada.
+ * @param virada Valor de virada da carta (0 ou 1).
+ * @param naipe Número do naipe (1 a 4).
+ * @param numero Número da carta (1 a 13).
+ */
 void inicializar_carta(Carta *carta, int virada, int naipe, int numero) {
     carta->virada = virada;
     carta->naipe = naipe;
     carta->numero = numero;
 }
 
+
+/**
+ * @brief Inicializa um deck de cartas.
+ *
+ * @param deck Ponteiro para a estrutura de deck a ser inicializada.
+ */
 void inicializar_deck(Deck *deck) {
     deck->indice = 0;
 
@@ -20,15 +34,24 @@ void inicializar_deck(Deck *deck) {
     }
 }
 
+
+/**
+ * @brief Embaralha as cartas em um deck usando o algoritmo de Fisher-Yates.
+ *
+ * @param deck Ponteiro para o deck a ser embaralhado.
+ */
 void randomizar_deck(Deck *deck) {
     srand((unsigned int)time(NULL));
-    // Embaralha as cartas usando o algoritmo de Fisher-Yates
-    for (int i = NUM_CARTAS; i > 0; --i) {
-        int j = rand() % (i + 1);
-        // Troca as cartas i e j
-        Carta temp = deck->cartas[i - 1];
-        deck->cartas[i - 1] = deck->cartas[j];
-        deck->cartas[j] = temp;
+
+    for (int k = 0; k < RANDOM_PRE_SET; ++k) {
+        for (int i = 0; i < NUM_CARTAS - 1; ++i) {
+            int j = i + rand() % (NUM_CARTAS - i);
+            
+            // Troca as cartas i e j
+            Carta temp = deck->cartas[i];
+            deck->cartas[i] = deck->cartas[j];
+            deck->cartas[j] = temp;
+        }
     }
 }
 
@@ -51,6 +74,7 @@ void enviar_para_pilhas(Jogo *jogo){
         }
     }
 }
+
 
 /**
  * @brief Inicializa a estrutura de jogo.
@@ -83,6 +107,14 @@ void inicializar_jogo(Jogo *jogo) {
 
 }
 
+
+/**
+ * @brief Retira uma carta de um deck de origem e a coloca em um deck de destino.
+ *
+ * @param origem Ponteiro para o deck de origem.
+ * @param destino Ponteiro para o deck de destino.
+ * @param v Valor de virada da carta no deck de destino (0 ou 1).
+ */
 void retirar_carta(Deck *origem, Deck *destino, int v) {
     if (origem->indice > 0) {
         destino->cartas[destino->indice] = origem->cartas[origem->indice - 1];
@@ -94,7 +126,16 @@ void retirar_carta(Deck *origem, Deck *destino, int v) {
     }
 }
 
-// Função para verificar se duas cartas têm cores diferentes
+
+
+/**
+ * @brief Verifica se duas cartas têm cores diferentes.
+ *
+ * @param origem Carta de origem.
+ * @param destino Carta de destino.
+ * @return true Se as cartas têm cores diferentes.
+ * @return false Se as cartas têm a mesma cor.
+ */
 bool cores_diferentes(Carta origem, Carta destino) {
     // Cores: 1 (vermelho) e 2 (preto)
     int cor_origem, cor_destino;
@@ -117,7 +158,15 @@ bool cores_diferentes(Carta origem, Carta destino) {
     return cor_origem != cor_destino;
 }
 
-// Função para verificar se a carta de origem é do mesmo naipe e a carta seguinte da carta de destino
+
+/**
+ * @brief Verifica se o movimento de uma carta para a fundação é válido.
+ *
+ * @param origem Carta de origem.
+ * @param destino Carta no topo da fundação.
+ * @return true Se o movimento é válido.
+ * @return false Se o movimento não é válido.
+ */
 bool verificar_movimento_valido_fundacao(Carta origem, Carta destino) {
     // Verificar se são do mesmo naipe
     bool mesmo_naipe = origem.naipe == destino.naipe;
@@ -128,6 +177,12 @@ bool verificar_movimento_valido_fundacao(Carta origem, Carta destino) {
     return mesmo_naipe && carta_seguinte;
 }
 
+
+/**
+ * @brief Atualiza o deck de descarte, movendo cartas do baralho, se necessário.
+ *
+ * @param jogo Ponteiro para a estrutura de jogo.
+ */
 void atualizar_descarte(Jogo *jogo) {
     // Verificar se há cartas no baralho
     if (jogo->baralho.indice > 0) {
@@ -155,6 +210,12 @@ void atualizar_descarte(Jogo *jogo) {
 }
 
 
+/**
+ * @brief Move uma carta do descarte para a fundação, se possível.
+ *
+ * @param jogo Ponteiro para a estrutura de jogo.
+ * @return int 1 se o movimento foi bem-sucedido, 0 se não foi.
+ */
 int mover_para_fundacao(Jogo *jogo) {
     // Verificar se há cartas no descarte
     if (jogo->descarte.indice > 0) {
@@ -196,7 +257,12 @@ int mover_para_fundacao(Jogo *jogo) {
     }
 }
 
-
+/**
+ * @brief Verifica se as condições de fim de jogo foram atendidas.
+ *
+ * @param jogo Ponteiro para a estrutura de jogo.
+ * @param game_is_running Ponteiro para a variável de controle do jogo.
+ */
 void checagem_fim_de_jogo(Jogo *jogo, int *game_is_running)
 {
     Carta fund0 = jogo->fundacao[0].cartas[jogo->fundacao[0].indice - 1];
@@ -306,86 +372,101 @@ void calcular_diferenca_tempo(Jogo *jogo) {
 }
 
 
-int move_pilha_pilha(Deck *origem, Deck *destino, int nivel)
-{
-    bool carta_seguinte = false;
+/**
+ * @brief Move cartas de um deck para outro, seguindo regras específicas.
+ *
+ * @param origem Deck de origem.
+ * @param destino Deck de destino.
+ * @param nivel Nível da operação (0 para movimento normal, 3 para movimento especial).
+ * @return 1 Se a movimentação foi bem-sucedida.
+ * @return 0 Se a movimentação falhou.
+ */
+int move_pilha_pilha(Deck *origem, Deck *destino, int nivel) {
+    // Verifica se os decks são válidos.
+    if (origem == NULL || destino == NULL || origem->indice <= 0) {
+        printf("Erro: Deck de origem inválido ou vazio.\n");
+        return 0;
+    }
 
-    if(destino->indice==0 && nivel != 3)
-    {
-        if(origem->cartas[origem->indice - 1].numero==13)
-        {
+    // Verifica se o deck de destino está vazio e não é um movimento especial de nível 3.
+    if (destino->indice == 0 && nivel != 3) {
+        // Se a última carta do deck de origem for 13, move a sequência diretamente.
+        if (origem->cartas[origem->indice - 1].numero == 13) {
             retirar_carta(origem, destino, 0);
             return 1;
-        }
-        else return 0;
-    }
-    else if(destino->indice!=0 && nivel != 3)
-    {
-        carta_seguinte = origem->cartas[origem->indice-1].numero == destino->cartas[destino->indice-1].numero - 1;
-        if(cores_diferentes(origem->cartas[origem->indice - 1],
-                            destino->cartas[destino->indice - 1])
-                            && carta_seguinte)
-        {
-            printf("cores diferentes, movendo\n");
-            retirar_carta(origem, destino, 0);
-            return 1;
-        }
-    }
-    else if(nivel == 3){
-        int indice = origem->indice;
-        int numero_desejado = 0;
-
-        if(destino->indice==0)
-        {
-            printf("Pilha de destino não possiu cartas!\n");
-            numero_desejado = 14;
-            carta_seguinte = origem->cartas[indice-1].numero == numero_desejado - 1;
-        }
-        else{
-            numero_desejado = destino->cartas[destino->indice-1].numero;
-            carta_seguinte = origem->cartas[indice-1].numero == numero_desejado - 1;
-        }
-
-        for(;!(carta_seguinte) && (origem->cartas[indice-1].virada ==0) && indice > 0  ;indice --)
-        {
-            carta_seguinte = origem->cartas[indice-1].numero == numero_desejado - 1;
-            if(carta_seguinte)break;
-        }
-
-        int counter = 0;
-
-        if(destino->indice == 0 && carta_seguinte)
-        {
-            printf("destino->indice == 0 && carta_seguinte!\n");
-            for(int i = indice; i<=origem->indice;i++){
-                destino->cartas[destino->indice] = origem->cartas[i-1];
-                counter++;
-                destino->indice++;
-            }
-            origem->indice = origem->indice - counter;
-            return 1;
-        }
-
-        if(!cores_diferentes(origem->cartas[indice - 1],
-                            destino->cartas[destino->indice - 1]))
-        {
+        } else {
+            printf("Erro: Não é possível mover cartas para o deck de destino vazio, a menos que seja um 'K'.\n");
             return 0;
         }
-        
-        for(int i = indice; i<=origem->indice;i++){
-                destino->cartas[destino->indice] = origem->cartas[i-1];
-                counter++;
-                destino->indice++;
-        }
-        printf("Carta encontrada para movimentação");
-        origem->indice = origem->indice - counter;
-        return 1;
+    }
+    // Verifica se o deck de destino não está vazio e não é um movimento especial de nível 3.
+    else if (destino->indice != 0 && nivel != 3) {
+        int indice_origem = origem->indice - 1;
+        int indice_destino = destino->indice - 1;
 
+        // Verifica se as cores são diferentes e se a carta é sequencial à última do destino.
+        if (cores_diferentes(origem->cartas[indice_origem], destino->cartas[indice_destino]) &&
+            origem->cartas[indice_origem].numero == destino->cartas[indice_destino].numero - 1) {
+            printf("Cores diferentes, movendo.\n");
+            retirar_carta(origem, destino, 0);
+            return 1;
+        } else {
+            printf("Erro: Movimento inválido para o deck de destino não vazio.\n");
+            return 0;
+        }
+    }
+    // Movimento especial de nível 3.
+    else if (nivel == 3) {
+        int indice_origem = origem->indice - 1;
+        int numero_desejado = (destino->indice > 0) ? destino->cartas[destino->indice - 1].numero : 14;
+
+        // Verifica se a última carta do deck de origem é 13 e move a sequência diretamente.
+        if (origem->cartas[indice_origem].numero == 13) {
+            retirar_carta(origem, destino, 0);
+            return 1;
+        }
+
+        int indice_valido = -1;
+
+        // Loop para encontrar a carta que possui o número diretamente abaixo do número da última carta do deck de destino.
+        while (indice_origem >= 0 && origem->cartas[indice_origem].virada == 0) {
+            // Verifica se a carta é a carta posterior à que está no deck.
+            if (origem->cartas[indice_origem].numero == numero_desejado - 1) {
+                indice_valido = indice_origem;
+                break;
+            }
+            indice_origem--;
+        }
+
+        if (indice_valido == -1) {
+            // Não encontrou carta válida.
+            printf("Não encontrou carta válida.\n");
+            return 0;
+        }
+
+        // Move as cartas.
+        for (int i = indice_valido; i < origem->indice; i++) {
+            destino->cartas[destino->indice] = origem->cartas[i];
+            destino->indice++;
+        }
+        origem->indice = indice_valido;
+
+        printf("Movendo carta.\n");
+        return 1;
     }
 
+    printf("Se chegou aqui, algo correu mal.\n");
+    return 0;
 }
 
 
+
+/**
+ * @brief Move uma carta da pilha para a fundação, se possível.
+ *
+ * @param origem Ponteiro para o deck de origem (pilha).
+ * @param jogo Ponteiro para a estrutura do jogo.
+ */
 void move_carta_pilha_fund(Deck *origem, Jogo *jogo) {
     // Verifica se há cartas na pilha de origem
     printf("Move carta_pilha_fund!!\n");
@@ -426,6 +507,13 @@ void move_carta_pilha_fund(Deck *origem, Jogo *jogo) {
     }
 }
 
+
+/**
+ * @brief Move uma carta da fundação para a pilha, se possível.
+ *
+ * @param destino Ponteiro para o deck de destino (pilha).
+ * @param jogo Ponteiro para a estrutura do jogo.
+ */
 void move_carta_fund_pilha(Deck *destino, Jogo *jogo)
 {
     printf("Move carta_fund_pilha!!\n");
@@ -438,12 +526,16 @@ void move_carta_fund_pilha(Deck *destino, Jogo *jogo)
     }
 }
 
+
 /**
- * @brief Verifica o que foi selecionado, e retorna um valor para a proxima selecao
+ * @brief Processa a seleção de cartas ou pilhas durante o jogo.
  *
- * @param jogo Ponteiro para a estrutura de jogo.
+ * @param primeira Índice da seleção inicial.
+ * @param segunda Índice da seleção secundária.
+ * @param jogo Ponteiro para a estrutura do jogo.
+ * @return -1 se a seleção for inválida ou um índice correspondente à seleção.
  */
-int process_selecao(int primeira, int segunda, Jogo *jogo) {
+int process_selecao(int primeira, int segunda, Jogo *jogo){
     // Verifica se a seleção é inválida
     if(primeira == -1)
     {   
@@ -495,6 +587,10 @@ int process_selecao(int primeira, int segunda, Jogo *jogo) {
     return -1;
 }
 
+
+/**
+ * @brief Zera as coordenadas do mouse.
+ */
 void zera_mouse_cords(void)
 {
     mouse_last_cord.x = 0;

@@ -95,6 +95,7 @@
 #define C_TEXT ((SDL_Color){255,146,36,255})
 #define C_P_BACK_BOX ((SDL_Color){210,210,210,255})
 #define C_P_BACK_TXT ((SDL_Color){0,0,0,255})
+#define C_SELECTED ((SDL_Color){153,0,153,255})
 
 
 // Estrutura para representar uma carta na interface gráfica

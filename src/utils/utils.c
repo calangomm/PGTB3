@@ -2,7 +2,10 @@
 #include "utils.h"
 #include "../include/common.h"
 
-// Limpa o terminal de acordo com o sistema operacional
+
+/**
+ * @brief Limpa o terminal.
+ */
 void limpar_terminal() {
     #ifdef _WIN32
         system("cls");
@@ -11,13 +14,22 @@ void limpar_terminal() {
     #endif
 }
 
-// Limpa o buffer do teclado
+
+/**
+ * @brief Limpa o buffer do teclado.
+ */
 void limpar_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-// Imprime uma carta, levando em consideração se está virada ou não
+
+/**
+ * @brief Imprime uma carta no formato especificado.
+ *
+ * @param c Carta a ser impressa.
+ * @param v Valor de virada da carta (0 ou 1).
+ */
 void imprimir_carta(Carta c, int v) {
     const char *naipes[] = {"♣", "♦", "♥", "♠"}; // Naipes Unicode para uma saída mais bonita
 
@@ -62,7 +74,12 @@ void imprimir_carta(Carta c, int v) {
     }
 }
 
-// Imprime um deck de cartas
+
+/**
+ * @brief Imprime as cartas de um deck.
+ *
+ * @param deck Ponteiro para o deck a ser impresso.
+ */
 void imprimir_deck(Deck *deck) {
     for (int i = 0; i < deck->indice; ++i) {
         imprimir_carta(deck->cartas[i], 0);
@@ -70,7 +87,12 @@ void imprimir_deck(Deck *deck) {
     printf("\n");
 }
 
-// Imprime o estado atual do jogo
+
+/**
+ * @brief Imprime o estado atual do jogo.
+ *
+ * @param jogo Ponteiro para a estrutura de jogo a ser impressa.
+ */
 void imprimir_jogo(Jogo *jogo) {
     printf("Baralho:\n");
     if (jogo->baralho.indice > 0) {
