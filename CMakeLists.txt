@@ -1,38 +1,57 @@
-# Define a versão mínima do CMake necessária para compilar o projeto.
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.10)
+project(game C)
 
-# Define o nome do projeto e sua versão.
-project(SolitarioGame VERSION 1.0)
+# Configurar a versão do C
+set(CMAKE_C_STANDARD 11)
 
-# Encontra o caminho para os cabeçalhos da biblioteca SDL (Simple DirectMedia Layer).
-find_path(SDL_INCLUDE_DIRS SDL.h PATHS "/usr/include/SDL2")
+# Configurar as pastas de código-fonte
+set(SOURCE_FILES
+    src/game_logic/game_logic.c
+    src/game_logic/game_logic.h
+    src/include/common.h
+    src/main.c
+    src/ui/ui.c
+    src/ui/ui.h
+    src/utils/utils.c
+    src/utils/utils.h
+)
 
-# Encontra a biblioteca SDL.
-find_library(SDL_LIBRARIES NAMES SDL2)
+# Adicionar o diretório de headers
+include_directories(
+    src/game_logic
+    src/include
+    src/ui
+    src/utils
+    dependencies/SDL2/include  # Incluindo diretório de headers do SDL2
+    dependencies/SDL2
+    dependencies/SDL2_image  # Incluindo diretório de headers do SDL2_image
+    dependencies/SDL2_ttf # Incluindo diretório de headers do SDL2_ttf
+    dependencies/FreeType/include  # Incluindo diretório de headers do FreeType
+)
 
-# Encontra o caminho para os cabeçalhos da biblioteca SDL_ttf (TrueType Font library for SDL).
-find_path(SDL_TTF_INCLUDE_DIRS SDL_ttf.h PATHS "/usr/include/SDL")
+# Adicionar o executável
+add_executable(game ${SOURCE_FILES})
 
-# Encontra a biblioteca SDL_ttf.
-find_library(SDL_TTF_LIBRARIES NAMES SDL2_ttf)
+# Configurar manualmente o FreeType
+set(FREETYPE_LIBRARIES 
+    "${CMAKE_SOURCE_DIR}/dependencies/freetype-2.11.0/objs/.libs/libfreetype.a"
+    "-lpthread"
+    "-lpng"  # Adicionar a biblioteca PNG
+    "-lz"  # Adicionar a biblioteca zlib
+    "-lm"  # Adicionar a biblioteca libm
+    "-ldl"
+)
+set(SDL2_LIBRARIES
+    "${CMAKE_SOURCE_DIR}/dependencies/SDL2/libSDL2.a"
+    "${CMAKE_SOURCE_DIR}/dependencies/SDL2/build/.libs/libSDL2.a"
+)
+set(SDL2_IMAGE_LIBRARIES
+    "${CMAKE_SOURCE_DIR}/dependencies/SDL2_image/libSDL2_image.a"
+    "${CMAKE_SOURCE_DIR}/dependencies/SDL2_image/.libs/libSDL2_image.a"
+)
+set(SDL2_TTF_LIBRARIES
+    "${CMAKE_SOURCE_DIR}/dependencies/SDL2_ttf/.libs/libSDL2_ttf.a"
+)
 
-# Encontra o caminho para os cabeçalhos da biblioteca SDL_image (Image loading library for SDL).
-find_path(SDL_IMAGE_INCLUDE_DIRS SDL_image.h PATHS "/usr/include/SDL2")
-
-# Encontra a biblioteca SDL_image.
-find_library(SDL_IMAGE_LIBRARIES NAMES SDL2_image)
-
-# Inclui os diretórios dos cabeçalhos necessários.
-include_directories(${SDL_INCLUDE_DIRS} ${SDL_TTF_INCLUDE_DIRS} ${SDL_IMAGE_INCLUDE_DIRS})
-
-# Obtém a lista de arquivos-fonte no diretório src e suas subpastas.
-file(GLOB SOURCES "src/*.c" "src/game_logic/*.c" "src/utils/*.c" "src/ui/*.c")
-
-# Cria um executável chamado 'game' usando os arquivos-fonte encontrados.
-add_executable(game ${SOURCES})
-
-# Liga as bibliotecas necessárias ao executável 'game'.
-target_link_libraries(game ${SDL_LIBRARIES} ${SDL_TTF_LIBRARIES} ${SDL_IMAGE_LIBRARIES})
-
-# Copia o diretório 'assets' para o diretório de compilação durante a construção.
-file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
+# Adicionar as bibliotecas
+target_link_libraries(game ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${FREETYPE_LIBRARIES})
