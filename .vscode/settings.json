@@ -1,0 +1,26 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "unistd.h": "c",
+        "game_logic.h": "c",
+        "utils.h": "c",
+        "pglib.h": "c",
+        "socket_events.h": "c",
+        "graphics.h": "c",
+        "stdbool.h": "c",
+        "uv.h": "c",
+        "events.h": "c",
+        "audio.h": "c",
+        "common.h": "c",
+        "sdl.h": "c",
+        "sdl_ttf.h": "c",
+        "stdlib.h": "c",
+        "string.h": "c",
+        "errno.h": "c",
+        "sdl_image.h": "c",
+        "comm.h": "c",
+        "components.h": "c",
+        "ui.h": "c",
+        "stdio.h": "c"
+    }
+}

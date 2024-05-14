@@ -2,6 +2,10 @@
 #include "utils.h"
 #include "../include/common.h"
 
+
+/**
+ * @brief Limpa o terminal.
+ */
 void limpar_terminal() {
     #ifdef _WIN32
         system("cls");
@@ -11,12 +15,21 @@ void limpar_terminal() {
 }
 
 
+/**
+ * @brief Limpa o buffer do teclado.
+ */
 void limpar_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
 
+/**
+ * @brief Imprime uma carta no formato especificado.
+ *
+ * @param c Carta a ser impressa.
+ * @param v Valor de virada da carta (0 ou 1).
+ */
 void imprimir_carta(Carta c, int v) {
     const char *naipes[] = {"♣", "♦", "♥", "♠"}; // Naipes Unicode para uma saída mais bonita
 
@@ -28,6 +41,7 @@ void imprimir_carta(Carta c, int v) {
         if (!c.virada) {
             const char *cor_naipe = (c.naipe == 1 || c.naipe == 3) ? cor_vermelha : cor_reset;
 
+            // Verifica se a carta é um Ás, Valete, Rainha, Rei ou outro número
             if (c.numero == 1) {
                 printf("%s A%s %s", cor_naipe, naipes[c.naipe - 1], cor_reset);
             } else if (c.numero == 11) {
@@ -45,6 +59,7 @@ void imprimir_carta(Carta c, int v) {
     } else {
         const char *cor_naipe = (c.naipe == 1 || c.naipe == 3) ? cor_vermelha : cor_reset;
 
+        // Verifica se a carta é um Ás, Valete, Rainha, Rei ou outro número
         if (c.numero == 1) {
             printf("%s A%s %s", cor_naipe, naipes[c.naipe - 1], cor_reset);
         } else if (c.numero == 11) {
@@ -60,26 +75,35 @@ void imprimir_carta(Carta c, int v) {
 }
 
 
-
-
+/**
+ * @brief Imprime as cartas de um deck.
+ *
+ * @param deck Ponteiro para o deck a ser impresso.
+ */
 void imprimir_deck(Deck *deck) {
     for (int i = 0; i < deck->indice; ++i) {
-        imprimir_carta(deck->cartas[i],0);
+        imprimir_carta(deck->cartas[i], 0);
     }
     printf("\n");
 }
 
+
+/**
+ * @brief Imprime o estado atual do jogo.
+ *
+ * @param jogo Ponteiro para a estrutura de jogo a ser impressa.
+ */
 void imprimir_jogo(Jogo *jogo) {
     printf("Baralho:\n");
     if (jogo->baralho.indice > 0) {
-        imprimir_carta(jogo->baralho.cartas[jogo->baralho.indice-1], 0);
+        imprimir_carta(jogo->baralho.cartas[jogo->baralho.indice - 1], 0);
     } else {
         printf("!!\n");
     }
 
     printf("\nDescarte:\n");
     if (jogo->descarte.indice > 0) {
-        imprimir_carta(jogo->descarte.cartas[jogo->descarte.indice-1], 0);
+        imprimir_carta(jogo->descarte.cartas[jogo->descarte.indice - 1], 0);
     } else {
         printf("!!\n");
     }
@@ -97,6 +121,3 @@ void imprimir_jogo(Jogo *jogo) {
 
     printf("\n\n");
 }
-
-
-
